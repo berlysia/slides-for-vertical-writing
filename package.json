@@ -1,0 +1,24 @@
+{
+  "name": "slides-for-vertical-writing",
+  "version": "1.0.0",
+  "description": "This directory contains various slide presentations organized by topic.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berlysia/slides-for-vertical-writing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berlysia/slides-for-vertical-writing/issues"
+  },
+  "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
+}
