@@ -46,17 +46,14 @@ jobs:
           node-version: ">=23.6"
           cache: "pnpm"
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Build slides
+        run: pnpm run build:all
 
-      - name: Build and deploy slides
-        run: |
-          chmod +x scripts/build-pages.ts
-          SLIDE_PATH="${{ github.event.inputs.slide }}" node scripts/build-pages.ts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./pages"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
