@@ -4,8 +4,9 @@
   "description": "This directory contains various slide presentations organized by topic.",
   "main": "index.js",
   "scripts": {
-    "build": "npx @berlysia/vertical-writing-slide-system@latest build --dir ./slides",
-    "build:all": "npx @berlysia/vertical-writing-slide-system@latest buildAll --dir ./slides",
+    "dev": "vertical-slides dev --dir ./slides",
+    "build": "vertical-slides build --dir ./slides",
+    "build:all": "vertical-slides buildAll --dir ./slides",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +21,9 @@
   },
   "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
   "devDependencies": {
-    "@berlysia/vertical-writing-slide-system": "^0.0.10",
-    "@types/node": "^22.13.10",
-    "react": "^19.1.1",
-    "typescript": "^5.8.2"
+    "@berlysia/vertical-writing-slide-system": "0.0.13",
+    "@types/node": "24.5.2",
+    "react": "19.1.1",
+    "typescript": "5.9.2"
   }
 }
