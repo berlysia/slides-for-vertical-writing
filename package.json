@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
   "devDependencies": {
-    "@berlysia/vertical-writing-slide-system": "^0.0.9",
+    "@berlysia/vertical-writing-slide-system": "^0.0.10",
     "@types/node": "^22.13.10",
+    "react": "^19.1.1",
     "typescript": "^5.8.2"
   }
 }
