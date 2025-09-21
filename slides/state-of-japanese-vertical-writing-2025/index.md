@@ -2,8 +2,8 @@
 
 <script>
 const toggleClass = "js-toggle-wm";
-const preferHorizontalClass = "js-prefer-horizontal wm-horizontal";
-const preferVerticalClass = "js-prefer-vertical wm-vertical";
+const preferHorizontalClass = "js-prefer-horizontal";
+const preferVerticalClass = "js-prefer-vertical";
 const growingTextClass = "js-growingtext";
 let toggled = false;
 
