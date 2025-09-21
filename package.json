@@ -22,6 +22,7 @@
     "url": "https://github.com/berlysia/slides-for-vertical-writing/issues"
   },
   "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
+  "packageManager": "pnpm@10.16.0",
   "devDependencies": {
     "@berlysia/vertical-writing-slide-system": "0.0.29",
     "@types/node": "24.5.2",
