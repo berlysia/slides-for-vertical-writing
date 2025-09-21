@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@berlysia/vertical-writing-slide-system':
-        specifier: 0.0.13
-        version: 0.0.13(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)
+        specifier: 0.0.29
+        version: 0.0.29(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)
       '@types/node':
         specifier: 24.5.2
         version: 24.5.2
@@ -68,8 +68,8 @@ packages:
     resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
     engines: {node: '>=6.9.0'}
 
-  '@berlysia/vertical-writing-slide-system@0.0.13':
-    resolution: {integrity: sha512-+VR+O3gV20/iFVYxhJRdOPyCEr1LJpxvLMljMyQtcUew/pKe5I6IuwwJ3qjfwo54H5zpl3GpolH6Sv9JKgpS7g==}
+  '@berlysia/vertical-writing-slide-system@0.0.29':
+    resolution: {integrity: sha512-rAhX2R3c8BnpcXiPZ7oFTTr5ZA4EEwEnieFvTxAhsX1FWLe+PBa/FVuVz/yIiExqnyAKy+rvZzOlQr+KBx37tQ==}
     hasBin: true
 
   '@emotion/babel-plugin@11.13.5':
@@ -1165,7 +1165,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@berlysia/vertical-writing-slide-system@0.0.13(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)':
+  '@berlysia/vertical-writing-slide-system@0.0.29(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)':
     dependencies:
       '@emotion/react': 11.14.0(@types/react@19.0.11)(react@19.1.1)
       '@mdx-js/mdx': 3.1.1

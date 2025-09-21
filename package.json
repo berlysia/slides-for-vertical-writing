@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vertical-slides dev --dir ./slides",
+    "dev:current": "vertical-slides dev --dir ./slides --name state-of-vertical-writing-2025",
     "build": "vertical-slides build --dir ./slides",
+    "build:current": "vertical-slides build --dir ./slides --name state-of-vertical-writing-2025",
     "build:all": "vertical-slides buildAll --dir ./slides",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +23,7 @@
   },
   "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
   "devDependencies": {
-    "@berlysia/vertical-writing-slide-system": "0.0.13",
+    "@berlysia/vertical-writing-slide-system": "0.0.29",
     "@types/node": "24.5.2",
     "react": "19.1.1",
     "typescript": "5.9.2"
