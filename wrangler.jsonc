@@ -1,0 +1,10 @@
+{
+  "name": "slides-berlysia-net",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-09-21",
+  // Static Assets 設定（Workers Static Assets）
+  "assets": {
+    "directory": "./pages",
+    "binding": "ASSETS"
+  }
+}

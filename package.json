@@ -9,7 +9,8 @@
     "build": "vertical-slides build --dir ./slides",
     "build:current": "vertical-slides build --dir ./slides --name state-of-japanese-vertical-writing-2025",
     "build:all": "vertical-slides buildAll --dir ./slides",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "pnpm run build:all && wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@berlysia/vertical-writing-slide-system": "0.0.30",
     "@types/node": "24.5.2",
     "react": "19.1.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wrangler": "^4.38.0"
   }
 }
