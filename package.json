@@ -24,7 +24,7 @@
   "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
   "packageManager": "pnpm@10.16.0",
   "devDependencies": {
-    "@berlysia/vertical-writing-slide-system": "0.0.29",
+    "@berlysia/vertical-writing-slide-system": "0.0.30",
     "@types/node": "24.5.2",
     "react": "19.1.1",
     "typescript": "5.9.2"
