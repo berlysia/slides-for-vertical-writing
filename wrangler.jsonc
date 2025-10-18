@@ -6,5 +6,15 @@
   "assets": {
     "directory": "./pages",
     "binding": "ASSETS"
+  },
+  // 環境別設定
+  "env": {
+    "staging": {
+      "name": "staging-slides-berlysia-net",
+      "assets": {
+        "directory": "./pages",
+        "binding": "ASSETS"
+      }
+    }
   }
 }

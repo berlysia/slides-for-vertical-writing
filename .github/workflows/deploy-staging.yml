@@ -1,7 +1,9 @@
-name: Deploy Cloudflare Worker
+name: Deploy Cloudflare Worker (Staging)
 
 on:
   push:
+    branches: [ develop, feature/* ]
+  pull_request:
     branches: [ master ]
   workflow_dispatch:
 
@@ -9,18 +11,19 @@ on:
 permissions:
   contents: read
   id-token: write
+  pull-requests: read
 
-# 並行実行制御 - 1つのデプロイのみ許可、実行中のものは完了まで待機
+# 並行実行制御 - staging環境も1つのデプロイのみ許可
 concurrency:
-  group: production-deploy
-  cancel-in-progress: false
+  group: staging-deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: production
-      url: https://slides.berlysia.net
+      name: staging
+      url: https://staging-slides-berlysia-net.berlysia.workers.dev
     steps:
       - name: Checkout
         uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1 (SHA固定)
@@ -42,23 +45,35 @@ jobs:
       - name: Build slides
         run: pnpm run build:all
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy to Cloudflare Workers (Staging)
         uses: cloudflare/wrangler-action@9681c2997648301493e78cacbfb790a9f19c833f # v3.9.0 (SHA固定)
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+          command: deploy --env staging
           workingDirectory: '.'
         env:
-          # セキュリティ強化のため、ワーカーの詳細ログを無効化
           WRANGLER_LOG_LEVEL: warn
 
       - name: Deployment notification
         if: always()
         run: |
           if [ "${{ job.status }}" == "success" ]; then
-            echo "✅ Production deployment successful"
+            echo "✅ Staging deployment successful"
+            echo "🌐 URL: https://staging-slides-berlysia-net.berlysia.workers.dev"
           else
-            echo "❌ Production deployment failed"
+            echo "❌ Staging deployment failed"
             exit 1
           fi
+
+      - name: Comment PR with deployment info
+        if: github.event_name == 'pull_request' && job.status == 'success'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🚀 Staging deployment successful!\n\n📍 Preview URL: https://staging-slides-berlysia-net.berlysia.workers.dev'
+            })
