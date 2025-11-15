@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@berlysia/vertical-writing-slide-system':
-        specifier: 0.0.30
-        version: 0.0.30(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)
+        specifier: 0.0.31
+        version: 0.0.31(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)
       '@types/node':
         specifier: 24.5.2
         version: 24.5.2
@@ -71,8 +71,8 @@ packages:
     resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
     engines: {node: '>=6.9.0'}
 
-  '@berlysia/vertical-writing-slide-system@0.0.30':
-    resolution: {integrity: sha512-tNad7gyWpLDJV695HXOQ7+3sv3tpcnjmiiJCyAT0nR0Yvg0Zx9bK5KO0xYP2ymVh0o/ycfhFrS7jgXjMFiiRvA==}
+  '@berlysia/vertical-writing-slide-system@0.0.31':
+    resolution: {integrity: sha512-U8IlIhBCjSYBJYzcWEQA3zmXQP2lt60MA6aPAU7GA16177vqClPnMVK5FxPwPj1Tx61TY7PKpnGXj72n0+CwOA==}
     hasBin: true
 
   '@cloudflare/kv-asset-handler@0.4.0':
@@ -1642,7 +1642,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@berlysia/vertical-writing-slide-system@0.0.30(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)':
+  '@berlysia/vertical-writing-slide-system@0.0.31(@types/node@24.5.2)(@types/react@19.0.11)(rollup@4.52.0)':
     dependencies:
       '@emotion/react': 11.14.0(@types/react@19.0.11)(react@19.1.1)
       '@mdx-js/mdx': 3.1.1
