@@ -1,3 +1,10 @@
+---
+title: 縦書きWebの実用を支えるJavaScript - JSConf JP 2025
+description: 縦書きのWebサイトを作るときに考えたくなる、スクロール方向の問題や、縦書きマルチカラムの高さ問題を紹介し、JavaScriptでの対応例を伝えます。
+author: berlysia
+date: 2025-11-16
+---
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanrp_s.css">
 
 <script>
@@ -354,7 +361,7 @@ a:any-link {
 }
 </style>
 
-<div class="wrapper" style="display: grid; place-items: center;">
+<!-- <div class="wrapper" style="display: grid; place-items: center;">
 
 <svg style="position: absolute; top: 0; left: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
   <path d="M7 7L17 7L17 9L10.41 9L17 15.59L15.59 17L9 10.41L9 17L7 17Z"/>
@@ -372,7 +379,7 @@ a:any-link {
 
 </div>
 
----
+--- -->
 
 <div class="wrapper center wm-horizontal">
 
@@ -401,7 +408,7 @@ a:any-link {
   </div>
 
   <div>
-    <h1 style="white-space: nowrap;">ＪＳの話をします</h1>
+    <h1 style="white-space: nowrap;">ＪＳの話をします、が</h1>
     <div style="display: grid; place-items: center; gap: 4rem;">
       <div>
         <ul>
@@ -419,19 +426,19 @@ a:any-link {
 
 <div class="wrapper header-and-content">
 
-# スクロール
+# スクロールの諸問題
 
 <div style="flex: 1;" class="two-column">
 
 <div style="display: grid; place-items: center;" class="js-toggle-wm js-prefer-vertical wm-vertical">
 
-<div class="wm-horizontal js-growingtext" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
+<div class="wm-horizontal js-growingtext" data-growingtext-index="6" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
 
 </div>
 
 <div style="display: grid; place-items: center;">
 
-<div class="wm-vertical js-growingtext" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
+<div class="wm-vertical js-growingtext" data-growingtext-index="6" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
 
 </div>
 
@@ -512,7 +519,7 @@ contentEl.addEventListener("wheel", e => {
 
 <div class="wrapper header-and-content">
 
-# 上下を左右にマップする
+# 「進む」感覚が逆になる
 
 <div style="flex: 1;" class="two-column">
 
@@ -531,7 +538,7 @@ contentEl.addEventListener("wheel", e => {
   </div>
 
   <div style="display: grid; place-items: center;">
-    <div class="wm-vertical js-growingtext js-broken-horizontal-map" data-growingtext-index="10" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
+    <div class="wm-vertical js-growingtext js-broken-horizontal-map" data-growingtext-index="12" style="border: 4px solid black; overflow: scroll; block-size: 8em; inline-size: 12em;"></div>
   </div>
 
   </div>
@@ -554,9 +561,9 @@ contentEl.addEventListener("wheel", e => {
     })();
   </script>
 
-  <div class="wm-horizontal" style="margin-top: 2rem; display: flex; gap: 1rem;">
-    <button style="font-weight: bold; font-size: 8cqh; width: 12cqh; height: 12cqh;" data-dummywheel-target=".js-broken-horizontal-map" data-dummywheel-direction="up">↑</button>
-    <button style="font-weight: bold; font-size: 8cqh; width: 12cqh; height: 12cqh;" data-dummywheel-target=".js-broken-horizontal-map" data-dummywheel-direction="down">↓</button>
+  <div class="wm-horizontal" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+    <button style="font-weight: bold; font-size: 8cqh; width: auto; height: 12cqh;" data-dummywheel-target=".js-broken-horizontal-map" data-dummywheel-direction="up">上（戻る）</button>
+    <button style="font-weight: bold; font-size: 8cqh; width: auto; height: 12cqh;" data-dummywheel-target=".js-broken-horizontal-map" data-dummywheel-direction="down">下（進む）</button>
   </div>
 </div>
 
@@ -567,6 +574,7 @@ contentEl.addEventListener("wheel", e => {
 - ボタンを押してみる
 - マウスでもやってみる
   - いつもの「進む」方向と逆
+  - シフトキーでもこの感覚になる
 
 </div>
 

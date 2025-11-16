@@ -1,3 +1,9 @@
+---
+title: 日本語縦書きＷｅｂの現在地 2025 - フロントエンドカンファレンス東京2025
+author: berlysia
+date: 2025-09-21
+---
+
 <script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
 
 <script>
