@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "vertical-slides dev --dir ./slides",
-    "dev:current": "vertical-slides dev --dir ./slides --name jsconfjp2025-javascript-for-vertical-writing-on-the-web",
+    "dev:current": "vertical-slides dev --dir ./slides --name burikaigi2026-use-vertical-writing-on-a-site-or-create-a-vertical-writing-site",
     "build": "vertical-slides build --dir ./slides",
-    "build:current": "vertical-slides build --dir ./slides --name jsconfjp2025-javascript-for-vertical-writing-on-the-web",
+    "build:current": "vertical-slides build --dir ./slides --name burikaigi2026-use-vertical-writing-on-a-site-or-create-a-vertical-writing-site",
     "build:all": "vertical-slides buildAll --dir ./slides",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "pnpm run build:all && wrangler deploy"
+    "deploy": "pnpm run build:all && wrangler deploy",
+    "serve:current": "pnpm run build:current && pnpm exec serve pages",
+    "serve:all": "pnpm run build:all && pnpm exec serve pages"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "@berlysia/vertical-writing-slide-system": "0.0.32",
     "@types/node": "24.5.2",
     "react": "19.1.1",
+    "serve": "14.2.5",
     "typescript": "5.9.2",
     "wrangler": "^4.38.0"
   }
