@@ -38,6 +38,8 @@ date: 2026-01-10
 
 .highlight-box {
   background-color: #f0f4ff;
+  inline-size: fit-content;
+  margin-inline: auto;
   padding: 3cqh;
   margin-block: 2cqh;
   background-color: #ccf;
@@ -63,7 +65,7 @@ date: 2026-01-10
 <svg style="position: absolute; bottom: 0; right: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
   <path d="M17 17L7 17L7 15L13.59 15L7 8.41L8.41 7L15 13.59L15 7L17 7Z"/>
 </svg>
-<div class="wm-horizontal">動作確認</div>
+<div class="wm-toggle">動作確認</div>
 
 </div>
 
@@ -73,7 +75,7 @@ date: 2026-01-10
 
 <div class="wrapper center wm-horizontal">
 
-<div style="display: flex; flex-direction: column; inline-size: 86cqh;">
+<div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2);">
   <h1 class="upright" style="overflow: visible; white-space: nowrap; block-size: 2lh;">Webサイトで縦書きを使う、<br />縦書きのWebサイトを作る</h1>
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
@@ -134,7 +136,7 @@ date: 2026-01-10
 
 <div class="wrapper center">
 
-<div style="display: flex; flex-direction: column; inline-size: 100%;">
+<div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2);">
   <h1 class="upright" style="overflow: visible; white-space: nowrap; block-size: 2lh;">Webサイトで縦書きを使う、<br />縦書きのWebサイトを作る</h1>
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
@@ -594,7 +596,7 @@ date: 2026-01-10
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
 
-<figure class="wm-horizontal"><div style="text-align: center;"><img src="@slide/jlreq-d-explainer.png" style="max-width: 70cqw; max-height: 70cqh;" /></div><figcaption>作成が進む「日本語デジタルテキスト組版の要件」
+<figure><img src="@slide/jlreq-d-explainer.png" style="max-width: 70cqw; max-height: 70cqh;" /><figcaption>作成が進む「日本語デジタルテキスト組版の要件」
 </figcaption></figure>
 
 </div>
@@ -653,7 +655,7 @@ date: 2026-01-10
 
 <div class="wrapper center">
 
-<div style="display: flex; flex-direction: column; inline-size: 100%;">
+<div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2);">
   <h1 class="upright" style="overflow: visible; white-space: nowrap; font-size: 6.9cqh; inline-size: 13.8cqh;">Webサイトで縦書きを使う、<br /><del style="color: #777;">縦書きの</del>Webサイトを作る</h1>
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
