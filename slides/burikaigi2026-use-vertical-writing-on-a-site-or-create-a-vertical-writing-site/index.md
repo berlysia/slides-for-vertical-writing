@@ -651,7 +651,7 @@ date: 2026-01-10
 <div class="wrapper center">
 
 <div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2);">
-  <h1 class="upright" style="overflow: visible; font-size: 6.9cqh; inline-size: 13.8cqh;">Webサイトで縦書きを使う、<wbr /><del style="color: #777;">縦書きの</del>Webサイトを作る</h1>
+  <h1 class="upright" style="overflow: visible;">Webサイトで縦書きを使う、<wbr /><del style="color: #777;">縦書きの</del>Webサイトを作る</h1>
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
 
