@@ -15,7 +15,8 @@
     "serve:current": "pnpm run build:current && pnpm exec serve pages",
     "serve:all": "pnpm run build:all && pnpm exec serve pages",
     "link:local": "git diff --quiet pnpm-workspace.yaml || echo '⚠️  pnpm-workspace.yaml has uncommitted changes. Run unlink:local before committing.' && pnpm link ../slide-system-for-vertical-writing",
-    "unlink:local": "test -L node_modules/@berlysia/vertical-writing-slide-system && (git checkout pnpm-workspace.yaml && pnpm install) || echo '⚠️  Not linked. Nothing to unlink.'"  },
+    "unlink:local": "test -L node_modules/@berlysia/vertical-writing-slide-system && (git checkout pnpm-workspace.yaml && pnpm install) || echo '⚠️  Not linked. Nothing to unlink.'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/berlysia/slides-for-vertical-writing.git"
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@berlysia/vertical-writing-slide-system": "0.1.3",
     "@types/node": "24.5.2",
+    "prettier": "3.7.4",
     "react": "19.1.1",
     "serve": "14.2.5",
     "typescript": "5.9.2",
