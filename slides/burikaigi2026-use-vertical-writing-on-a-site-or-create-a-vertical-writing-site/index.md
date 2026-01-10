@@ -79,7 +79,7 @@ a:any-link {
 }
 </style>
 
-<div class="wrapper" style="display: grid; place-items: center;">
+<!-- <div class="wrapper" style="display: grid; place-items: center;">
 
 <svg style="position: absolute; top: 0; left: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
   <path d="M7 7L17 7L17 9L10.41 9L17 15.59L15.59 17L9 10.41L9 17L7 17Z"/>
@@ -97,7 +97,7 @@ a:any-link {
 
 </div>
 
----
+--- -->
 
 <!-- タイトルスライド（横書き） -->
 
@@ -292,8 +292,9 @@ a:any-link {
 
 - 行方向が縦（縦に組む）であること
 - 縦組における文字の向き／縦組用字形の扱い
-  - 回転・正立、縦用グリフ等
+  - 回転・正立、縦用グリフなど
 - 縦組に適した禁則処理・約物処理
+  - 約物のぶら下げなど
 
 これらが扱えていないと、<br />
 日本語の縦組として違和感を感じやすい
@@ -544,7 +545,7 @@ a:any-link {
 
 <div class="wrapper header-and-content">
 
-<h1 class="upright" style="overflow: visible; font-size: 3.2rem">「<del style="color: #555;">縦書きの</del>Ｗｅｂサイトを作る」</h1>
+<h1 class="upright" style="overflow: visible; font-size: 3.2rem">「<del style="color: #777;">縦書きの</del>Ｗｅｂサイトを作る」</h1>
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
 
@@ -579,7 +580,7 @@ a:any-link {
 Ｗｅｂでもできるように広がること
 
 ＣＳＳの能力を向上していくことで、<br />
-「<del style="color: #555;">縦書きの</del>Ｗｅｂサイトを作る」への<br />道が開けていくだろう
+「<del style="color: #777;">縦書きの</del>Ｗｅｂサイトを作る」への<br />道が開けていくだろう
 
 その未来の日本語デジタル文書もまた<br />縦書きを特別視しないはずだ
 
@@ -613,6 +614,19 @@ a:any-link {
 黙ってみていてはいけない
 
 </div>
+</div>
+
+---
+
+<div class="wrapper header-and-content">
+
+# デジタル文書への取り組み
+
+<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+
+<figure class="wm-horizontal"><div style="text-align: center;"><img src="@slide/jlreq-d-explainer.png" style="width: 60vw" /></div><figcaption>作成が進む「日本語デジタルテキスト組版の要件」
+</figcaption></figure>
+
 </div>
 
 ---
@@ -670,7 +684,7 @@ a:any-link {
 <div class="wrapper center">
 
 <div style="display: flex; flex-direction: column;">
-  <h1 class="upright" style="overflow: visible; font-size: 3.2rem">Webサイトで縦書きを使う、<br /><del style="color: #555;">縦書きの</del>Webサイトを作る</h1>
+  <h1 class="upright" style="overflow: visible; font-size: 3.2rem">Webサイトで縦書きを使う、<br /><del style="color: #777;">縦書きの</del>Webサイトを作る</h1>
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
 
