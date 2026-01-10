@@ -17,6 +17,11 @@ date: 2026-01-10
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    /* 子はすべて flex: 1 */
+    & > * {
+      flex: 1;
+    }
   }
 }
 
@@ -79,7 +84,7 @@ date: 2026-01-10
 
 # 縦書きをする言語
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 - ＣＪＫのイメージが強いだろう
 
@@ -103,7 +108,7 @@ date: 2026-01-10
 
 # 縦書きをする言語
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 - ＣＪＫのイメージが強いだろう
 
@@ -140,14 +145,14 @@ date: 2026-01-10
 
 # 日本語のなかの縦書き
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div class="centered" style="flex: 1; display: flex; flex-direction: column;">
 
 ソフトウェアの世界で生きていると<wbr />
 横書き中心のように感じるが……
 
 現代の日本語表記は：
 
-<div class="highlight-box">左横書きを第一選択肢としながら、<wbr />右縦書きを必要に応じて併用している</div>
+<div class="highlight-box">左横書きを第一選択肢としながら、<br />右縦書きを必要に応じて併用している</div>
 
 <div style="font-size: 4cqh; color: #666;">
 参考：屋名池誠『横書き登場 日本語表記の近代』
@@ -164,7 +169,7 @@ date: 2026-01-10
 
 # 電子書籍とＷｅｂの縦書き
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 - 書籍は伝統的に縦書きが主流
 
@@ -193,7 +198,7 @@ date: 2026-01-10
 
 # Ｗｅｂで縦書きが使われて<wbr /><span class="tcu-all">10</span>年が経つ
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 先人の努力に深く感謝しつつ、<wbr />
 今日は歴史の話はしない
@@ -219,7 +224,7 @@ date: 2026-01-10
 
 # 「日本語が使える」とは<wbr />どういうことか
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 [日本語組版処理の要件](https://www.w3.org/TR/jlreq/)
 
@@ -247,7 +252,7 @@ date: 2026-01-10
 
 # 「縦書きができる」とは<wbr />どういうことか
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 おなじく、[日本語組版処理の要件](https://www.w3.org/TR/jlreq/)から
 
@@ -271,7 +276,7 @@ date: 2026-01-10
 
 # 関連するＣＳＳプロパティ
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 - `writing-mode`
 
@@ -307,7 +312,7 @@ date: 2026-01-10
 
 <h1 class="upright" style="overflow: visible; font-size: 6cqh;">「Ｗｅｂサイトで縦書きを使う」は<wbr />確かに叶った</h1>
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 デザインの中に縦書きを取り入れ、<wbr />`writing-mode`を使っている場面は<wbr />しばしば見られる
 
@@ -328,7 +333,7 @@ date: 2026-01-10
 
 # 「縦書きのＷｅｂサイト」<wbr />を作ることの課題
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 直面する大きく三つの関心事
 
@@ -347,7 +352,7 @@ date: 2026-01-10
 
 # スクロールの問題
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 縦書きのテキストは<wbr />
 素朴には横スクロールを引き起こす<wbr />
@@ -380,7 +385,7 @@ date: 2026-01-10
 
 # フォントの問題
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 向きを伴う文字の扱いに<wbr />一貫性を持つのが難しい
 
@@ -410,7 +415,7 @@ date: 2026-01-10
 
 # デザインの問題
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 「縦書きのＷｅｂサイト」の探究が<wbr />
 ほとんど進んでいない
@@ -438,7 +443,7 @@ date: 2026-01-10
 
 # ページメディアと<wbr />連続メディア
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 電子書籍の世界で取り組まれたのは<wbr />
 <strong>ページメディア</strong>としての日本語組版<wbr />
@@ -463,7 +468,7 @@ date: 2026-01-10
 
 # ほぼ全ての取り組みが<wbr />「発明」を求められる
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 - <strong>参考にできる先行事例が少ない</strong>
 - デザインパターンが確立していない
@@ -485,7 +490,7 @@ date: 2026-01-10
 
 # 先駆者の不在に差す光
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 <strong>縦書きしかできない</strong>文字<wbr />
 モンゴル文字復権のムーブメント
@@ -508,7 +513,7 @@ date: 2026-01-10
 
 <h1 class="upright" style="overflow: visible; font-size: 6.4cqh">「<del style="color: #777;">縦書きの</del>Ｗｅｂサイトを作る」</h1>
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 縦書きは日本語だけの関心ではない<wbr />
 Ｗｅｂは縦書きを受け入れた
@@ -530,7 +535,7 @@ date: 2026-01-10
 
 # 日本語の縦横併用を想う
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 日本語では、<wbr />
 縦書きと横書きを併用することが<wbr />
@@ -556,7 +561,7 @@ date: 2026-01-10
 
 # [Writing Modes Level 4](https://www.w3.org/TR/css-writing-modes-4/)
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 現在ＣＲ（勧告候補）の段階にあり、<wbr />
 縦横混植を想定した内容が含まれている
@@ -570,8 +575,8 @@ date: 2026-01-10
 
 課題はまだ多くあるが、火は灯っている
 
-日本語話者の当事者として<wbr />
-縦書きと横書きを併用する当事者として<wbr />
+日本語話者の当事者として、<wbr />
+縦書きと横書きを併用する当事者として、<wbr />
 黙ってみていてはいけない
 
 </div>
@@ -583,7 +588,7 @@ date: 2026-01-10
 
 # デジタル文書への取り組み
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 <figure><img src="@slide/jlreq-d-explainer.png" style="max-width: 70cqw; max-height: 70cqh;" /><figcaption>作成が進む「日本語デジタルテキスト組版の要件」
 </figcaption></figure>
@@ -598,7 +603,7 @@ date: 2026-01-10
 
 <h1 class="upright" style="overflow: visible;">Webサイトで縦書きを使う、<wbr />縦書きのWebサイトを作る</h1>
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="flex: 1; display: flex; flex-direction: column;">
 
 Ｗｅｂに縦書きは実装され、<wbr />欠かせない存在となっている
 
@@ -621,7 +626,7 @@ date: 2026-01-10
 
 <div class="two-column">
 
-<div class="wm-horizontal" style="display: grid; place-items: center;"><div style="text-align: center;"><img src="@slide/berlysia.jpg" style="height: 20cqw; border-radius: 9999px;" /><p style="line-height: 1em">berlysia<wbr /><span style="font-size: 0.6em">（べるりしあ）</span></p></div></div>
+<div class="wm-horizontal" style="display: grid; place-items: center;"><div style="text-align: center;"><img src="@slide/berlysia.jpg" style="height: 20cqw; border-radius: 9999px;" /><p style="line-height: 1em">berlysia<br /><span style="font-size: 0.6em">（べるりしあ）</span></p></div></div>
 
 <div>
 
