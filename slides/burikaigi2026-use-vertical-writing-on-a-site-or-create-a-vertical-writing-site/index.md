@@ -51,26 +51,6 @@ date: 2026-01-10
 }
 </style>
 
-<!-- <div class="wrapper" style="display: grid; place-items: center;">
-
-<svg style="position: absolute; top: 0; left: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M7 7L17 7L17 9L10.41 9L17 15.59L15.59 17L9 10.41L9 17L7 17Z"/>
-</svg>
-<svg style="position: absolute; top: 0; right: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M17 7L7 7L7 9L13.59 9L7 15.59L8.41 17L15 10.41L15 17L17 17Z"/>
-</svg>
-<svg style="position: absolute; bottom: 0; left: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M7 17L17 17L17 15L10.41 15L17 8.41L15.59 7L9 13.59L9 7L7 7Z"/>
-</svg>
-<svg style="position: absolute; bottom: 0; right: 0; width: 8cqh; height: 8cqh;" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M17 17L7 17L7 15L13.59 15L7 8.41L8.41 7L15 13.59L15 7L17 7Z"/>
-</svg>
-<div class="wm-toggle">動作確認</div>
-
-</div>
-
---- -->
-
 <!-- タイトルスライド（横書き） -->
 
 <div class="wrapper center wm-horizontal">
