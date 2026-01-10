@@ -308,9 +308,9 @@ CJKやその他の言語も睨んで<wbr />
 
 縦書きを活用するサービスは<wbr />すでに存在し、欠かせない存在に
 
-<p style="overflow: visible;">しかしいま、<wbr />
+しかしいま、<wbr />
 「<strong>縦書きの</strong>Webサイトを作る」ことは、<wbr />
-「Webサイトを作る」の<strong>外</strong>にある</p>
+「Webサイトを作る」の<strong>外</strong>にある
 
 </div>
 </div>
@@ -382,7 +382,7 @@ CJKやその他の言語も睨んで<wbr />
 三点リーダ … はどうか？
 
 - 各文字の既定方向の定義
-  - Unicode の [UAX #50](https://www.unicode.org/reports/tr50/)
+  - Unicodeの[UAX #50](https://www.unicode.org/reports/tr50/)
 - 各フォントの縦書きグリフ収録状況
   - 実際の縦書きグリフの内容
 - 各レンダラーの実装
