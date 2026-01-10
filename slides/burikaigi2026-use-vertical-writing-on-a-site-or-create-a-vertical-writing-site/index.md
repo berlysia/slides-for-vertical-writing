@@ -101,7 +101,7 @@ a:any-link {
 
 <!-- タイトルスライド（横書き） -->
 
-<div class="wrapper center wm-horizontal">
+<!-- <div class="wrapper center wm-horizontal">
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">
   <h1>Webサイトで縦書きを使う、<br />縦書きのWebサイトを作る</h1>
@@ -110,11 +110,11 @@ a:any-link {
 
 </div>
 
----
+--- -->
 
 <!-- 縦書きをする言語（横書き） -->
 
-<div class="wrapper header-and-content wm-horizontal">
+<!-- <div class="wrapper header-and-content wm-horizontal">
 
 # 縦書きをする言語
 
@@ -134,11 +134,11 @@ a:any-link {
 </div>
 </div>
 
----
+--- -->
 
 <!-- 縦書きをする言語（縦書き） -->
 
-<div class="wrapper header-and-content wm-vertical">
+<!-- <div class="wrapper header-and-content wm-vertical">
 
 # 縦書きをする言語
 
@@ -158,7 +158,7 @@ a:any-link {
 </div>
 </div>
 
----
+--- -->
 
 <!-- タイトル再掲（縦書き） -->
 
@@ -169,6 +169,30 @@ a:any-link {
   <div style="align-self: end; color: #444;">berlysia / BuriKaigi 2026</div>
 </div>
 
+</div>
+
+---
+
+<!-- 公開用順序調整 -->
+
+<div class="wrapper header-and-content wm-vertical">
+
+# 縦書きをする言語
+
+<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
+
+- ＣＪＫのイメージが強いだろう
+
+  - 中国語・日本語・韓国語
+
+- 縦書きの活用度合いには差がある
+
+  - 日本語が一番<br />アクティブに縦書きを使っている
+
+- これらの言語の面白いところ
+  - 急に縦書きになっても<br />横書きになっても<br />問題なく読める
+
+</div>
 </div>
 
 ---
