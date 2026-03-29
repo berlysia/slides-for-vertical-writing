@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <defs>
+    <marker id="cyc-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="cyc-arrow-red" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#e33"/>
+    </marker>
+  </defs>
+
+  <!-- 円環の中心 -->
+  <!-- 5つのノード: イメージ(上), コンテンツ(右上), 実需(右下), 仕様(左下), 道具(左上) -->
+  <!-- 円の半径180, 中心(250,240) -->
+
+  <!-- ノード位置（上から時計回り）:
+    イメージ: (250, 60)
+    コンテンツ: (421, 168)
+    実需: (356, 366)
+    仕様: (144, 366)
+    道具: (79, 168)
+  -->
+
+  <!-- 円弧の矢印（時計回り） -->
+  <!-- イメージ → コンテンツ -->
+  <path d="M 280,72 A 180,180 0 0,1 408,148" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+  <!-- コンテンツ → 実需 -->
+  <path d="M 430,198 A 180,180 0 0,1 374,350" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+  <!-- 実需 → 仕様 -->
+  <path d="M 326,382 A 180,180 0 0,1 174,382" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+  <!-- 仕様 → 道具 -->
+  <path d="M 126,350 A 180,180 0 0,1 70,198" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+  <!-- 道具 → イメージ -->
+  <path d="M 92,148 A 180,180 0 0,1 220,72" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- ノードの背景円 -->
+  <circle cx="250" cy="60" r="38" fill="#fff4e6" stroke="#e8a" stroke-width="2"/>
+  <circle cx="421" cy="168" r="38" fill="#e6f0ff" stroke="#88a" stroke-width="2"/>
+  <circle cx="356" cy="366" r="38" fill="#e6ffe6" stroke="#8a8" stroke-width="2"/>
+  <circle cx="144" cy="366" r="38" fill="#f0e6ff" stroke="#a8a" stroke-width="2"/>
+  <circle cx="79" cy="168" r="38" fill="#ffe6e6" stroke="#a88" stroke-width="2"/>
+
+  <!-- ノードのテキスト -->
+  <text x="250" y="56" text-anchor="middle" font-size="13" font-weight="bold" fill="#b64">イメージ</text>
+  <text x="250" y="72" text-anchor="middle" font-size="10" fill="#b64">がない</text>
+
+  <text x="421" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#448">コンテンツ</text>
+  <text x="421" y="180" text-anchor="middle" font-size="10" fill="#448">が生まれない</text>
+
+  <text x="356" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#484">実需</text>
+  <text x="356" y="378" text-anchor="middle" font-size="10" fill="#484">がない</text>
+
+  <text x="144" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#848">仕様</text>
+  <text x="144" y="378" text-anchor="middle" font-size="10" fill="#848">の優先度↓</text>
+
+  <text x="79" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#844">道具</text>
+  <text x="79" y="180" text-anchor="middle" font-size="10" fill="#844">が整わない</text>
+
+  <!-- 「断つ」ポイント -->
+  <!-- イメージ→コンテンツ の間と、道具→イメージ の間に介入 -->
+  <g transform="translate(340, 95)">
+    <line x1="-10" y1="-20" x2="10" y2="20" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
+    <line x1="10" y1="-20" x2="-10" y2="20" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
+    <text x="24" y="4" font-size="13" font-weight="bold" fill="#e33">断つ</text>
+  </g>
+
+  <!-- 中央のラベル -->
+  <text x="250" y="230" text-anchor="middle" font-size="14" fill="#888">鶏と卵の</text>
+  <text x="250" y="250" text-anchor="middle" font-size="14" fill="#888">循環構造</text>
+</svg>

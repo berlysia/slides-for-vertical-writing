@@ -2,14 +2,25 @@
   "name": "slides-for-vertical-writing",
   "version": "1.0.0",
   "description": "This directory contains various slide presentations organized by topic.",
+  "keywords": [],
+  "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
+  "bugs": {
+    "url": "https://github.com/berlysia/slides-for-vertical-writing/issues"
+  },
+  "license": "ISC",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berlysia/slides-for-vertical-writing.git"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "vertical-slides dev --dir ./slides",
-    "dev:current": "vertical-slides dev --dir ./slides --name burikaigi2026-use-vertical-writing-on-a-site-or-create-a-vertical-writing-site",
+    "dev:current": "vertical-slides dev --dir ./slides --name sigdc139-vertical-writing-website-requirements",
     "build": "vertical-slides build --dir ./slides",
-    "build:current": "vertical-slides build --dir ./slides --name burikaigi2026-use-vertical-writing-on-a-site-or-create-a-vertical-writing-site",
+    "build:current": "vertical-slides build --dir ./slides --name sigdc139-vertical-writing-website-requirements",
     "build:all": "vertical-slides buildAll --dir ./slides",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no tests\" && exit 0",
     "predeploy": "BASE_URL=https://slides.berlysia.net/ pnpm run build:all",
     "deploy": "wrangler deploy",
     "serve:current": "pnpm run build:current && pnpm exec serve pages",
@@ -17,18 +28,6 @@
     "link:local": "git diff --quiet pnpm-workspace.yaml || echo '⚠️  pnpm-workspace.yaml has uncommitted changes. Run unlink:local before committing.' && pnpm link ../slide-system-for-vertical-writing",
     "unlink:local": "test -L node_modules/@berlysia/vertical-writing-slide-system && (git checkout pnpm-workspace.yaml && pnpm install) || echo '⚠️  Not linked. Nothing to unlink.'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/berlysia/slides-for-vertical-writing.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/berlysia/slides-for-vertical-writing/issues"
-  },
-  "homepage": "https://github.com/berlysia/slides-for-vertical-writing#readme",
-  "packageManager": "pnpm@10.16.0",
   "devDependencies": {
     "@berlysia/vertical-writing-slide-system": "0.1.3",
     "@types/node": "24.5.2",
@@ -37,5 +36,6 @@
     "serve": "14.2.5",
     "typescript": "5.9.2",
     "wrangler": "^4.38.0"
-  }
+  },
+  "packageManager": "pnpm@10.16.0"
 }

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <!-- 雑誌見開きの抽象ワイヤフレーム：縦書きマルチカラム本文＋横書きコラム・キャプション混在 -->
+
+  <!-- 見開きの枠 -->
+  <rect x="20" y="20" width="660" height="400" rx="4" fill="#faf8f4" stroke="#888" stroke-width="2"/>
+  <!-- 中央の綴じ -->
+  <line x1="350" y1="20" x2="350" y2="420" stroke="#ccc" stroke-width="1" stroke-dasharray="6"/>
+
+  <!-- 右ページ（読み始め：見出し＋本文マルチカラム） -->
+  <g transform="translate(370, 40)">
+    <!-- 見出し（横書き・大） -->
+    <rect x="0" y="0" width="280" height="28" rx="2" fill="#c4a" opacity="0.2"/>
+    <text x="140" y="20" text-anchor="middle" font-size="12" fill="#c4a" font-weight="bold">見出し（横書き）</text>
+
+    <!-- 縦書き本文マルチカラム -->
+    <rect x="0" y="40" width="280" height="320" rx="2" fill="none" stroke="#666" stroke-width="1"/>
+
+    <!-- 右段 -->
+    <g transform="translate(150, 56)">
+      <line x1="116" y1="0" x2="116" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="100" y1="0" x2="100" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="84" y1="0" x2="84" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="68" y1="0" x2="68" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="52" y1="0" x2="52" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="36" y1="0" x2="36" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="20" y1="0" x2="20" y2="288" stroke="#ddd" stroke-width="1.5"/>
+    </g>
+    <!-- 段間 -->
+    <line x1="140" y1="48" x2="140" y2="352" stroke="#bbb" stroke-width="0.5" stroke-dasharray="3"/>
+    <!-- 左段 -->
+    <g transform="translate(14, 56)">
+      <line x1="112" y1="0" x2="112" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="96" y1="0" x2="96" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="80" y1="0" x2="80" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="64" y1="0" x2="64" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="48" y1="0" x2="48" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="32" y1="0" x2="32" y2="288" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="16" y1="0" x2="16" y2="288" stroke="#ddd" stroke-width="1.5"/>
+    </g>
+
+    <!-- ノンブル（外側＝右下） -->
+    <text x="270" y="380" text-anchor="end" font-size="10" fill="#aaa">43</text>
+  </g>
+
+  <!-- 左ページ（続き：本文マルチカラム＋図版＋コラム） -->
+  <g transform="translate(40, 40)">
+    <!-- 縦書き本文マルチカラム -->
+    <rect x="100" y="0" width="180" height="370" rx="2" fill="none" stroke="#666" stroke-width="1"/>
+
+    <!-- 右段 -->
+    <g transform="translate(200, 14)">
+      <line x1="66" y1="0" x2="66" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="50" y1="0" x2="50" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="34" y1="0" x2="34" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="18" y1="0" x2="18" y2="340" stroke="#ddd" stroke-width="1.5"/>
+    </g>
+    <!-- 段間 -->
+    <line x1="190" y1="8" x2="190" y2="364" stroke="#bbb" stroke-width="0.5" stroke-dasharray="3"/>
+    <!-- 左段 -->
+    <g transform="translate(114, 14)">
+      <line x1="62" y1="0" x2="62" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="46" y1="0" x2="46" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="30" y1="0" x2="30" y2="340" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="14" y1="0" x2="14" y2="200" stroke="#ddd" stroke-width="1.5"/>
+    </g>
+
+    <!-- 図版 -->
+    <rect x="0" y="0" width="85" height="110" rx="2" fill="#e8e4e0" stroke="#999"/>
+    <text x="42" y="60" text-anchor="middle" font-size="10" fill="#777">図版</text>
+
+    <!-- キャプション（横書き） -->
+    <rect x="0" y="120" width="85" height="36" rx="2" fill="#f0ece8" stroke="#bbb" stroke-dasharray="3"/>
+    <g transform="translate(6, 132)">
+      <line x1="0" y1="0" x2="74" y2="0" stroke="#ccc" stroke-width="1"/>
+      <line x1="0" y1="10" x2="74" y2="10" stroke="#ccc" stroke-width="1"/>
+    </g>
+    <text x="42" y="170" text-anchor="middle" font-size="9" fill="#999">キャプション（横書き）</text>
+
+    <!-- コラム（横書き） -->
+    <rect x="0" y="190" width="85" height="180" rx="2" fill="#e8ecf4" stroke="#88a"/>
+    <text x="42" y="214" text-anchor="middle" font-size="10" fill="#557" font-weight="bold">コラム</text>
+    <text x="42" y="228" text-anchor="middle" font-size="9" fill="#557">（横書き）</text>
+    <g transform="translate(8, 240)">
+      <line x1="0" y1="0" x2="70" y2="0" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="12" x2="70" y2="12" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="24" x2="70" y2="24" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="36" x2="70" y2="36" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="48" x2="70" y2="48" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="60" x2="70" y2="60" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="72" x2="70" y2="72" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="84" x2="70" y2="84" stroke="#aac" stroke-width="1"/>
+      <line x1="0" y1="96" x2="50" y2="96" stroke="#aac" stroke-width="1"/>
+    </g>
+
+    <!-- ノンブル（外側＝左下） -->
+    <text x="0" y="380" font-size="10" fill="#aaa">42</text>
+  </g>
+
+  <!-- 凡例（実物写真入手後差し替え予定） -->
+  <text x="350" y="438" text-anchor="middle" font-size="10" fill="#999" font-style="italic">※ 抽象ワイヤフレーム（実物写真入手後差し替え予定）</text>
+</svg>

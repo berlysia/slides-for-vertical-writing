@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e44"/>
+    </marker>
+    <rect id="viewport" width="160" height="260" rx="6" fill="none" stroke="#333" stroke-width="2"/>
+  </defs>
+
+  <!-- 横書き -->
+  <g transform="translate(30, 30)">
+    <text x="100" y="0" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">横書き</text>
+    <use href="#viewport" y="20"/>
+    <!-- テキスト行（横書き：左→右、上→下） -->
+    <g transform="translate(12, 40)">
+      <line x1="0" y1="0" x2="136" y2="0" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="18" x2="136" y2="18" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="36" x2="136" y2="36" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="54" x2="136" y2="54" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="72" x2="136" y2="72" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="90" x2="136" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="108" x2="136" y2="108" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="126" x2="136" y2="126" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="144" x2="136" y2="144" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="162" x2="136" y2="162" stroke="#aaa" stroke-width="2"/>
+      <line x1="0" y1="180" x2="80" y2="180" stroke="#aaa" stroke-width="2"/>
+    </g>
+    <!-- 流れの矢印（下向き） -->
+    <line x1="100" y1="290" x2="100" y2="340" stroke="#e44" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="100" y="360" text-anchor="middle" font-size="12" fill="#e44">縦スクロール ↓</text>
+  </g>
+
+  <!-- 縦書き -->
+  <g transform="translate(250, 30)">
+    <text x="100" y="0" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">縦書き</text>
+    <use href="#viewport" y="20"/>
+    <!-- テキスト行（縦書き：上→下、右→左） -->
+    <g transform="translate(12, 40)">
+      <line x1="136" y1="0" x2="136" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="118" y1="0" x2="118" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="100" y1="0" x2="100" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="82" y1="0" x2="82" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="64" y1="0" x2="64" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="46" y1="0" x2="46" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="28" y1="0" x2="28" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="10" y1="0" x2="10" y2="230" stroke="#aaa" stroke-width="2"/>
+    </g>
+    <!-- はみ出す行（左へ） -->
+    <g transform="translate(-60, 40)" opacity="0.4">
+      <line x1="52" y1="0" x2="52" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="34" y1="0" x2="34" y2="230" stroke="#aaa" stroke-width="2"/>
+      <line x1="16" y1="0" x2="16" y2="230" stroke="#aaa" stroke-width="2"/>
+    </g>
+    <!-- 流れの矢印（左向き） -->
+    <line x1="-10" y1="150" x2="-50" y2="150" stroke="#e44" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="-30" y="360" text-anchor="middle" font-size="12" fill="#e44">横スクロール ←</text>
+  </g>
+
+  <!-- マルチカラム -->
+  <g transform="translate(530, 30)">
+    <text x="170" y="0" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">縦組みマルチカラム</text>
+    <text x="170" y="18" text-anchor="middle" font-size="11" fill="#666">（段に分割して流し込むレイアウト）</text>
+
+    <!-- 1段目 -->
+    <rect x="20" y="30" width="300" height="120" rx="4" fill="none" stroke="#333" stroke-width="2"/>
+    <g transform="translate(32, 46)">
+      <!-- 右カラム -->
+      <line x1="268" y1="0" x2="268" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="250" y1="0" x2="250" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="232" y1="0" x2="232" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="214" y1="0" x2="214" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="196" y1="0" x2="196" y2="90" stroke="#aaa" stroke-width="2"/>
+      <!-- 区切り -->
+      <line x1="180" y1="-6" x2="180" y2="96" stroke="#ccc" stroke-width="1" stroke-dasharray="4"/>
+      <!-- 左カラム -->
+      <line x1="158" y1="0" x2="158" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="140" y1="0" x2="140" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="122" y1="0" x2="122" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="104" y1="0" x2="104" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="86" y1="0" x2="86" y2="90" stroke="#aaa" stroke-width="2"/>
+    </g>
+    <!-- 折り返し矢印 -->
+    <path d="M 52,146 L 52,160 L 320,160 L 320,176" fill="none" stroke="#e44" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+    <!-- 2段目 -->
+    <rect x="20" y="170" width="300" height="120" rx="4" fill="none" stroke="#333" stroke-width="2"/>
+    <g transform="translate(32, 186)">
+      <!-- 右カラム -->
+      <line x1="268" y1="0" x2="268" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="250" y1="0" x2="250" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="232" y1="0" x2="232" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="214" y1="0" x2="214" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="196" y1="0" x2="196" y2="90" stroke="#aaa" stroke-width="2"/>
+      <!-- 区切り -->
+      <line x1="180" y1="-6" x2="180" y2="96" stroke="#ccc" stroke-width="1" stroke-dasharray="4"/>
+      <!-- 左カラム -->
+      <line x1="158" y1="0" x2="158" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="140" y1="0" x2="140" y2="90" stroke="#aaa" stroke-width="2"/>
+      <line x1="122" y1="0" x2="122" y2="50" stroke="#aaa" stroke-width="2"/>
+    </g>
+
+    <!-- 流れの矢印（下向き） -->
+    <line x1="170" y1="300" x2="170" y2="340" stroke="#e44" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="170" y="360" text-anchor="middle" font-size="12" fill="#e44">縦スクロール ↓</text>
+  </g>
+</svg>

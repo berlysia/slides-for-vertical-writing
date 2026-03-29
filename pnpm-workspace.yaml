@@ -1,3 +1,6 @@
 onlyBuiltDependencies:
   - '@swc/core'
   - esbuild
+
+overrides:
+  '@berlysia/vertical-writing-slide-system': link:../slide-system-for-vertical-writing

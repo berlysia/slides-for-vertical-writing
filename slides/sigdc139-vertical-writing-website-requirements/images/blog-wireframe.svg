@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e44"/>
+    </marker>
+  </defs>
+
+  <!-- 左：横書きの一般的な構成 -->
+  <g transform="translate(30, 10)">
+    <text x="150" y="16" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">横書きの一般的な構成</text>
+
+    <rect x="0" y="30" width="300" height="370" rx="6" fill="#fafafa" stroke="#333" stroke-width="2"/>
+
+    <!-- ヘッダー -->
+    <rect x="10" y="40" width="280" height="30" rx="3" fill="#dde" stroke="#999"/>
+    <text x="150" y="60" text-anchor="middle" font-size="11" fill="#555">ヘッダー</text>
+
+    <!-- ナビゲーション -->
+    <rect x="10" y="78" width="280" height="22" rx="3" fill="#eed" stroke="#999"/>
+    <text x="150" y="93" text-anchor="middle" font-size="10" fill="#555">ナビゲーション</text>
+
+    <!-- 本文（横書き） -->
+    <rect x="10" y="108" width="280" height="220" rx="3" fill="#fff" stroke="#999"/>
+    <text x="150" y="126" text-anchor="middle" font-size="11" fill="#555">本文（横書き）</text>
+    <g transform="translate(24, 138)">
+      <line x1="0" y1="0" x2="252" y2="0" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="16" x2="252" y2="16" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="32" x2="252" y2="32" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="48" x2="252" y2="48" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="64" x2="252" y2="64" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="80" x2="252" y2="80" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="96" x2="252" y2="96" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="112" x2="252" y2="112" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="128" x2="252" y2="128" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="144" x2="252" y2="144" stroke="#ccc" stroke-width="1.5"/>
+      <line x1="0" y1="160" x2="160" y2="160" stroke="#ccc" stroke-width="1.5"/>
+    </g>
+
+    <!-- フッター -->
+    <rect x="10" y="336" width="280" height="28" rx="3" fill="#dde" stroke="#999"/>
+    <text x="150" y="354" text-anchor="middle" font-size="10" fill="#555">フッター</text>
+  </g>
+
+  <!-- 矢印 -->
+  <text x="400" y="220" text-anchor="middle" font-size="28" fill="#e44">→</text>
+
+  <!-- 右：本文を縦組みマルチカラムに -->
+  <g transform="translate(470, 10)">
+    <text x="150" y="16" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">本文を縦組みマルチカラムに</text>
+
+    <rect x="0" y="30" width="300" height="370" rx="6" fill="#fafafa" stroke="#333" stroke-width="2"/>
+
+    <!-- ヘッダー -->
+    <rect x="10" y="40" width="280" height="30" rx="3" fill="#dde" stroke="#999"/>
+    <text x="150" y="60" text-anchor="middle" font-size="11" fill="#555">ヘッダー</text>
+
+    <!-- ナビゲーション -->
+    <rect x="10" y="78" width="280" height="22" rx="3" fill="#eed" stroke="#999"/>
+    <text x="150" y="93" text-anchor="middle" font-size="10" fill="#555">ナビゲーション</text>
+
+    <!-- 本文（縦組みマルチカラム） -->
+    <rect x="10" y="108" width="280" height="220" rx="3" fill="#eef4ff" stroke="#4466aa" stroke-width="1.5"/>
+    <text x="150" y="126" text-anchor="middle" font-size="11" fill="#4466aa" font-weight="bold">本文（縦組みマルチカラム）</text>
+
+    <!-- カラム1（右） -->
+    <g transform="translate(160, 138)">
+      <line x1="116" y1="0" x2="116" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="100" y1="0" x2="100" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="84" y1="0" x2="84" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="68" y1="0" x2="68" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="52" y1="0" x2="52" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="36" y1="0" x2="36" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="20" y1="0" x2="20" y2="170" stroke="#99b" stroke-width="1.5"/>
+    </g>
+
+    <!-- 区切り線 -->
+    <line x1="155" y1="132" x2="155" y2="318" stroke="#aab" stroke-width="1" stroke-dasharray="4"/>
+
+    <!-- カラム2（左） -->
+    <g transform="translate(20, 138)">
+      <line x1="120" y1="0" x2="120" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="104" y1="0" x2="104" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="88" y1="0" x2="88" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="72" y1="0" x2="72" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="56" y1="0" x2="56" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="40" y1="0" x2="40" y2="170" stroke="#99b" stroke-width="1.5"/>
+      <line x1="24" y1="0" x2="24" y2="100" stroke="#99b" stroke-width="1.5"/>
+    </g>
+
+    <!-- フッター -->
+    <rect x="10" y="336" width="280" height="28" rx="3" fill="#dde" stroke="#999"/>
+    <text x="150" y="354" text-anchor="middle" font-size="10" fill="#555">フッター</text>
+  </g>
+</svg>
