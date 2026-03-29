@@ -8,62 +8,71 @@
     </marker>
   </defs>
 
-  <!-- 円環の中心 -->
-  <!-- 5つのノード: イメージ(上), コンテンツ(右上), 実需(右下), 仕様(左下), 道具(左上) -->
-  <!-- 円の半径180, 中心(250,240) -->
+  <!--
+    中心: (250, 240), 半径R: 180, ノード半径r: 38
+    5ノード、-90°から72°刻み（時計回り、SVG座標）
 
-  <!-- ノード位置（上から時計回り）:
-    イメージ: (250, 60)
-    コンテンツ: (421, 168)
-    実需: (356, 366)
-    仕様: (144, 366)
-    道具: (79, 168)
+    ノード位置 (cx + R*cos(θ), cy + R*sin(θ)):
+      イメージ  270°: (250, 60)
+      コンテンツ 342°: (421, 184)
+      実需       54°: (356, 386)
+      仕様      126°: (144, 386)
+      道具      198°: (79, 184)
+
+    矢印オフセット: r/R ≈ 12°
+    始点角度 = 出発ノード角度 + 12°
+    終点角度 = 到着ノード角度 - 12°
+    始点/終点 = 大円上のその角度の点
+    円弧: R=180, sweep=1(時計回り), large-arc=0(48°<180°)
   -->
 
-  <!-- 円弧の矢印（時計回り） -->
-  <!-- イメージ → コンテンツ -->
-  <path d="M 280,72 A 180,180 0 0,1 408,148" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
-  <!-- コンテンツ → 実需 -->
-  <path d="M 430,198 A 180,180 0 0,1 374,350" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
-  <!-- 実需 → 仕様 -->
-  <path d="M 326,382 A 180,180 0 0,1 174,382" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
-  <!-- 仕様 → 道具 -->
-  <path d="M 126,350 A 180,180 0 0,1 70,198" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
-  <!-- 道具 → イメージ -->
-  <path d="M 92,148 A 180,180 0 0,1 220,72" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+  <!-- 矢印: イメージ(270°)→コンテンツ(342°), 始点282°→終点330° -->
+  <path d="M 287,64 A 180,180 0 0,1 406,150" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
 
-  <!-- ノードの背景円 -->
+  <!-- 矢印: コンテンツ(342°)→実需(54°), 始点354°→終点42° -->
+  <path d="M 429,221 A 180,180 0 0,1 384,360" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 実需(54°)→仕様(126°), 始点66°→終点114° -->
+  <path d="M 323,404 A 180,180 0 0,1 177,404" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 仕様(126°)→道具(198°), 始点138°→終点186° -->
+  <path d="M 116,360 A 180,180 0 0,1 71,221" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 道具(198°)→イメージ(270°), 始点210°→終点258° -->
+  <path d="M 94,150 A 180,180 0 0,1 213,64" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- ノード背景円 -->
   <circle cx="250" cy="60" r="38" fill="#fff4e6" stroke="#e8a" stroke-width="2"/>
-  <circle cx="421" cy="168" r="38" fill="#e6f0ff" stroke="#88a" stroke-width="2"/>
-  <circle cx="356" cy="366" r="38" fill="#e6ffe6" stroke="#8a8" stroke-width="2"/>
-  <circle cx="144" cy="366" r="38" fill="#f0e6ff" stroke="#a8a" stroke-width="2"/>
-  <circle cx="79" cy="168" r="38" fill="#ffe6e6" stroke="#a88" stroke-width="2"/>
+  <circle cx="421" cy="184" r="38" fill="#e6f0ff" stroke="#88a" stroke-width="2"/>
+  <circle cx="356" cy="386" r="38" fill="#e6ffe6" stroke="#8a8" stroke-width="2"/>
+  <circle cx="144" cy="386" r="38" fill="#f0e6ff" stroke="#a8a" stroke-width="2"/>
+  <circle cx="79" cy="184" r="38" fill="#ffe6e6" stroke="#a88" stroke-width="2"/>
 
-  <!-- ノードのテキスト -->
+  <!-- ノードテキスト -->
   <text x="250" y="56" text-anchor="middle" font-size="13" font-weight="bold" fill="#b64">イメージ</text>
   <text x="250" y="72" text-anchor="middle" font-size="10" fill="#b64">がない</text>
 
-  <text x="421" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#448">コンテンツ</text>
-  <text x="421" y="180" text-anchor="middle" font-size="10" fill="#448">が生まれない</text>
+  <text x="421" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#448">コンテンツ</text>
+  <text x="421" y="196" text-anchor="middle" font-size="10" fill="#448">が生まれない</text>
 
-  <text x="356" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#484">実需</text>
-  <text x="356" y="378" text-anchor="middle" font-size="10" fill="#484">がない</text>
+  <text x="356" y="382" text-anchor="middle" font-size="13" font-weight="bold" fill="#484">実需</text>
+  <text x="356" y="398" text-anchor="middle" font-size="10" fill="#484">がない</text>
 
-  <text x="144" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#848">仕様</text>
-  <text x="144" y="378" text-anchor="middle" font-size="10" fill="#848">の優先度↓</text>
+  <text x="144" y="382" text-anchor="middle" font-size="13" font-weight="bold" fill="#848">仕様</text>
+  <text x="144" y="398" text-anchor="middle" font-size="10" fill="#848">の優先度↓</text>
 
-  <text x="79" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#844">道具</text>
-  <text x="79" y="180" text-anchor="middle" font-size="10" fill="#844">が整わない</text>
+  <text x="79" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#844">道具</text>
+  <text x="79" y="196" text-anchor="middle" font-size="10" fill="#844">が整わない</text>
 
-  <!-- 「断つ」ポイント -->
-  <!-- イメージ→コンテンツ の間と、道具→イメージ の間に介入 -->
-  <g transform="translate(340, 95)">
-    <line x1="-10" y1="-20" x2="10" y2="20" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
-    <line x1="10" y1="-20" x2="-10" y2="20" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
-    <text x="24" y="4" font-size="13" font-weight="bold" fill="#e33">断つ</text>
+  <!-- 「断つ」ポイント: イメージ→コンテンツ弧の中点、角度306° -->
+  <!-- (250+180*cos(306°), 240+180*sin(306°)) = (356, 94) -->
+  <g transform="translate(356, 94)">
+    <line x1="-10" y1="-16" x2="10" y2="16" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
+    <line x1="10" y1="-16" x2="-10" y2="16" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
+    <text x="20" y="4" font-size="13" font-weight="bold" fill="#e33">断つ</text>
   </g>
 
-  <!-- 中央のラベル -->
-  <text x="250" y="230" text-anchor="middle" font-size="14" fill="#888">鶏と卵の</text>
-  <text x="250" y="250" text-anchor="middle" font-size="14" fill="#888">循環構造</text>
+  <!-- 中央ラベル -->
+  <text x="250" y="236" text-anchor="middle" font-size="14" fill="#888">鶏と卵の</text>
+  <text x="250" y="256" text-anchor="middle" font-size="14" fill="#888">循環構造</text>
 </svg>

@@ -82,20 +82,27 @@ date: 2026-03-30
 
 ---
 
-<!-- 3: 縦横の豊かさ＋Webにはない -->
+<!-- 2: 日本語のなかの縦書き -->
 
 <div class="wrapper header-and-content">
 
-# 縦横の使い分けが持つ豊かさ
+# 日本語のなかの縦書き
 
-<div style="flex: 1; display: flex; flex-direction: column;">
+<div class="centered" style="flex: 1; display: flex; flex-direction: column;">
 
-- 縦書きの本文
-- 横書きのコラム、文量あるキャプション
-- 縦横を使い分ける見出し
+ソフトウェアの世界で生きていると<wbr />
+横書き中心のように感じるが……
 
-<div class="highlight-box" >
-<strong>この豊かさが、Webにはまだない</strong>
+現代の日本語表記は：
+
+<div class="highlight-box">左横書きを第一選択肢としながら、<br />右縦書きを必要に応じて併用している</div>
+
+<div style="font-size: 4cqh; color: #666;">
+参考：屋名池誠『横書き登場 日本語表記の近代』
+</div>
+
+<div style="margin-block-start: 2cqb;">
+さらに、一つの紙面上で<wbr />縦横を混在させることもある
 </div>
 
 </div>
@@ -103,7 +110,64 @@ date: 2026-03-30
 
 ---
 
-<!-- 5: 素朴に持ち込むと → 横スクロール -->
+<!-- 3: 紙面の混在の豊かさ（存在証明） -->
+
+<div class="wrapper header-and-content">
+
+# 紙面における縦横混在
+
+<div style="flex: 1; display: flex; flex-direction: column;">
+
+- 縦書きの本文
+- 横書きのコラム、文量あるキャプション
+- 縦横を使い分ける見出し
+
+<div style="">
+
+方向の使い分けは、<wbr />紙面設計の成熟した語彙である
+
+</div>
+
+この豊かさが、Webにはまだ乏しい
+
+
+</div>
+</div>
+
+---
+
+<!-- 4: 言葉の整理＋射程 -->
+
+<div class="wrapper header-and-content">
+
+# 言葉の整理
+
+<div style="display: flex; flex-direction: column; gap: 4cqh;">
+<div>
+<div class="def-term">縦書きテキスト</div>
+<div class="def-body">CSSの <code>writing-mode</code> で<wbr />縦組みされたテキスト</div>
+</div>
+<div>
+<div class="def-term">縦書きのWebサイト</div>
+<div class="def-body">主に縦書きで構成されたWebサイト</div>
+<div style="font-size: 3.5cqh; color: #666; margin-block-start: 1cqw;">
+縦書きのみの形（CJK＋モンゴル文字）と、<wbr />縦書きと横書きの混用の形（CJKが中心）がある
+</div>
+<div style="font-size: 3.5cqh; color: #666; margin-block-start: 1cqw;">
+横書きのWebサイトが当たり前の中で、<wbr />どちらも<strong>特殊な存在にとどまっている</strong>
+</div>
+</div>
+
+<div class="highlight-box">
+この特殊さを解消することが<wbr />本発表全体の関心事である
+</div>
+
+</div>
+</div>
+
+---
+
+<!-- 5: 素朴に持ち込むと → 横スクロール → 結果として例外 -->
 
 <div class="wrapper header-and-content">
 
@@ -115,121 +179,12 @@ date: 2026-03-30
 - 縦スクロール前提のデバイスと不一致
   - マウスホイール、キーボード
   - 汎用的なマッピングは困難
+- デザイン上も既存資産と乖離する
 
-<figure style="margin-left: 2cqw; margin-right: 2cqw;"><img src="@slide/overflow-tategaki.png" alt="コンテンツの流れとビューポートの関係：縦書き（横スクロール）" style="max-width: 35cqw; max-height: 45cqh;" /><img src="@slide/overflow-yokogaki.png" alt="コンテンツの流れとビューポートの関係：横書き（縦スクロール）" style="max-width: 35cqw; max-height: 45cqh;" /><figcaption>コンテンツの流れとビューポートの関係<br />横書き（縦スクロール）、縦書き（横スクロール）</figcaption></figure>
+<figure style="margin-left: 2cqw; margin-right: 0;"><img src="@slide/overflow-tategaki.png" alt="コンテンツの流れとビューポートの関係：縦書き（横スクロール）" style="max-width: 25cqw; max-height: 45cqh;" /><img src="@slide/overflow-yokogaki.png" alt="コンテンツの流れとビューポートの関係：横書き（縦スクロール）" style="max-width: 25cqw; max-height: 45cqh;" /><figcaption>コンテンツの流れとビューポートの関係<br />横書き（縦スクロール）、縦書き（横スクロール）</figcaption></figure>
 
-</div>
-</div>
-
----
-
-<!-- 言葉の整理 -->
-
-<div class="wrapper header-and-content">
-
-# 言葉の整理
-
-<div style="display: flex; flex-direction: column; gap: 4cqh;">
-<div>
-<div class="def-term">縦書きテキスト</div>
-<div class="def-body">CSSの `writing-mode` で<wbr />縦組みされたテキスト</div>
-</div>
-<div>
-<div class="def-term">縦書きのWebサイト</div>
-<div class="def-body">主に縦書きで構成されたWebサイト</div>
-<div style="font-size: 3.5cqh; color: #666; margin-block-start: 1cqw;">
-縦書きのみの形（CJK＋モンゴル文字）と、<wbr />縦書きと横書きの混用の形（CJKが中心）がある
-</div>
-<div style="font-size: 3.5cqh; color: #666; margin-block-start: 1cqw;">
-横書きのWebサイトが当たり前の中で、<wbr />どちらも特殊な存在にとどまっている
-</div>
-</div>
-</div>
-
-</div>
-
----
-
-<!-- 段階図：溝の視覚化＋スマホWebとの同相 -->
-
-<div class="wrapper header-and-content">
-
-## 縦横混用の現在地
-
-<div class="wm-horizontal" style="display: flex; flex-direction: column; gap: 3cqh; font-size: 2.8cqh; inline-size: calc(100cqh - var(--space-wrapper) * 2);">
-
-<div style="display: flex; flex-direction: row-reverse; align-items: center; justify-content: center; gap: 1.2cqh;">
-<div style="padding: 1.2cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363;">横書きWeb<br /><span style="font-size: 0.85em; font-weight: normal;">writing-mode以前</span></div>
-<div style="color: #888;">←</div>
-<div style="display: flex; flex-direction: column; gap: 0.5cqh;">
-<div style="padding: 0.8cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363; font-size: 0.9em;">横書きWebサイト</div>
-<div style="padding: 0.8cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363; font-size: 0.9em;">横書きメイン＋縦書きテキスト</div>
-<div style="padding: 0.8cqh 1.5cqh; background: #dadada; border: 1px solid #666; border-radius: 1cqh; text-align: center; font-weight: bold; color: #333; font-size: 0.9em;">縦書きメイン＋横書きテキスト</div>
-<div style="padding: 0.8cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363; font-size: 0.9em;">縦書きWebサイト</div>
-</div>
-<div style="color: #c33; font-weight: bold; font-size: 3.5cqh;">‖</div>
-<div style="padding: 1.2cqh 1.5cqh; background: #fff3cd; border: 2px dashed #ca6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #856404;">接続フェーズ<br /><span style="font-size: 0.85em; font-weight: normal;">？</span></div>
-<div style="color: #888;">←</div>
-<div style="padding: 1.2cqh 1.5cqh; background: #f8d7da; border: 2px dashed #a66; border-radius: 1cqh; text-align: center; font-weight: bold; color: #721c24;">独自化フェーズ<br /><span style="font-size: 0.85em; font-weight: normal;">？</span></div>
-</div>
-
-<div style="text-align: center; color: #c33; font-weight: bold; font-size: 2.8cqh;">ここから先に進めていない</div>
-
-<div style="border-top: 1px solid #ccc; padding-top: 2.5cqh;">
-<div style="font-size: 3cqh; font-weight: bold; color: #555; margin-bottom: 1.5cqh; text-align: center;">参考：スマホWebの歩み</div>
-<div style="display: flex; flex-direction: row-reverse; align-items: center; justify-content: center; gap: 1.2cqh;">
-<div style="padding: 1.2cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363;">PC向けWeb</div>
-<div style="color: #888;">←</div>
-<div style="display: flex; flex-direction: column; gap: 0.5cqh;">
-<div style="padding: 0.8cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363; font-size: 0.9em;">PC向けWeb</div>
-<div style="padding: 0.8cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363; font-size: 0.9em;">SP向けWeb</div>
-</div>
-<div style="color: #888;">←</div>
-<div style="padding: 1.2cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363;">レスポンシブ<br />デザインで統合</div>
-<div style="color: #888;">←</div>
-<div style="padding: 1.2cqh 1.5cqh; background: #d4edda; border: 1px solid #6a6; border-radius: 1cqh; text-align: center; font-weight: bold; color: #363;">モバイル<br />ファースト</div>
-</div>
-<div style="text-align: center; color: #595; font-size: 2.8cqh;"></div>
-</div>
-
-</div>
-
-</div>
-
----
-
-<!-- 前提が違う、それでも問いは同じ -->
-
-<div class="wrapper center">
-
-<div class="punch">
-<div style="font-size: 4.5cqh; color: #666; margin-block-end: 2cqh;">スマホWebには膨大なコンテンツがあった<br />縦書きWebのコンテンツはこれから生まれる</div>
-<div style="font-size: 5cqh; margin-block-end: 3cqh;">前提が違う</div>
-<div class="highlight-box">
-<div class="punch-text" style="font-size: 6cqh;">それでも問いは同じ<br />この分断を埋めるには？</div>
-</div>
-</div>
-
-</div>
-
----
-
-<!-- 接続フェーズ＋射程 -->
-
-<div class="wrapper header-and-content">
-
-# 接続フェーズ
-
-<div style="flex: 1; display: flex; flex-direction: column;">
-
-既存のWebデザインの作法と接続し、<wbr />縦書きを組み込む段階
-
-- ヘッダー・ナビゲーションは横書きのまま
-- 本文領域だけ縦書きに
-
-<div class="highlight-box" style="margin-block-start: auto;">
-<strong>本発表の射程は接続フェーズ</strong><br />
-<span style="font-size: 3.5cqh;">分断を埋めるために今何が必要か</span>
+<div style=" font-size: 4cqh; color: #666;">
+結果として縦書きは特設や演出にとどまり、<wbr />本文級で使うには覚悟が要る
 </div>
 
 </div>
@@ -237,7 +192,7 @@ date: 2026-03-30
 
 ---
 
-<!-- 15: 縦組みマルチカラム（図メイン） -->
+<!-- 5: 縦組みマルチカラム（図メイン） -->
 
 <div class="wrapper header-and-content">
 
@@ -245,21 +200,17 @@ date: 2026-03-30
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-<figure><img src="@slide/content-flow.svg" alt="コンテンツの流れとビューポートの関係：横書き（縦スクロール）、縦書き（横スクロール）、縦組みマルチカラム（縦スクロール回復）の3列比較" style="max-width: 85cqw; max-height: 55cqh;" /></figure>
+- 縦書きの段を並べ、<wbr />段が縦に積み重なるレイアウト
+  - 縦スクロールで読み進められる
 
-<div style="margin-block-start: auto;">
-
-- 段が縦に積み重なる → 縦スクロールと一致
-- 横書きのヘッダー・ナビと共存できる
-
-</div>
+<figure style="margin-left: 2cqw; margin-right: 2cqw;"><img src="@slide/overflow-tategaki.png" alt="コンテンツの流れとビューポートの関係：縦書き（横スクロール）" style="max-width: 15cqw; max-height: 45cqh;" /><img src="@slide/overflow-yokogaki.png" alt="コンテンツの流れとビューポートの関係：横書き（縦スクロール）" style="max-width: 15cqw; max-height: 45cqh;" /><img src="@slide/overflow-tategaki-multicol.png" alt="コンテンツの流れとビューポートの関係：縦書きマルチカラム（縦スクロール）" style="max-width: 20cqw; max-height: 45cqh;" /><figcaption>縦組みマルチカラムと縦書き横書きの比較<br />縦書きかつ縦スクロールが叶うことがわかる</figcaption></figure>
 
 </div>
 </div>
 
 ---
 
-<!-- 既存Webデザインとの接続＋段階的導入 -->
+<!-- 6: 既存Webデザインとの接続＋段階的導入 -->
 
 <div class="wrapper header-and-content">
 
@@ -267,35 +218,59 @@ date: 2026-03-30
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-<figure><img src="@slide/blog-wireframe.svg" alt="ブログ風ワイヤフレーム：左が横書きの一般的な構成、右が本文領域のみ縦組みマルチカラムに変更した構成" style="max-width: 85cqw; max-height: 55cqh;" /></figure>
-
-<div style="margin-block-start: auto; font-size: 4.5cqh; font-weight: bold;">
-本文領域を縦組みマルチカラムにするだけで<wbr />段階的に縦書き体験を導入できる
+<div style=" font-size: 4.5cqh;">
+本文領域を縦組みマルチカラムにすることで<wbr />縦書きメインコンテンツを導入できる
 </div>
+
+<figure style="margin-left: 2cqw; margin-right: 2cqw;"><img src="@slide/wireframe-tategaki.png" alt="ブログ風ワイヤフレーム：本文領域のみ縦組みマルチカラムに変更した構成" style="max-width: 20cqw; max-height: 45cqh;" /><img src="@slide/wireframe-yokogaki.png" alt="ブログ風ワイヤフレーム：横書きの一般的な構成" style="max-width: 20cqw; max-height: 45cqh;" /><figcaption>縦組みマルチカラムの用例</figcaption></figure>
+
+- 横書きのヘッダー・ナビと共存できる
+  - 縦スクロールの世界の住人になれる
 
 </div>
 </div>
 
 ---
 
-<!-- 翻訳の議論＋CJKだけではない -->
+<!-- 7: CJKだけの話ではない（問題提起） -->
 
 <div class="wrapper center">
 
-<div class="punch">
-<div style="font-size: 5cqh; margin-block-end: 2cqh;">この縦書きのWebサイトを<wbr />横書き言語にしたら？</div>
-<div style="font-size: 5cqh; font-weight: bold; color: #c33; margin-block-end: 3cqh;">当然、破綻する</div>
-<div style="font-size: 4cqh; color: #555; line-height: 1.6; margin-block-end: 3cqh;">しかし接続フェーズの手段は<br />横書きWebとレイアウト構造を共有している</div>
-<div class="highlight-box">
-<strong>縦書きのWebサイトは<wbr />CJKだけの関心事ではない</strong>
+<div>
+<div style="font-size: 6cqh;">「縦書きのWebサイト」は<br />CJKだけの関心事ではない</div>
+<div style="font-size: 4cqh; color: #666; margin-block-start: 3cqh;">書字方向の異なる言語・文字間で<br />本文のレイアウトを接続する方法にもなる</div>
+
 </div>
+
+---
+
+<!-- 8: 翻訳・多言語対応（デモ） -->
+
+<div class="wrapper header-and-content">
+
+## 翻訳・多言語対応
+
+<div style="flex: 1; display: flex; flex-direction: column;">
+
+<div style="font-size: 5cqh; margin-block: 2cqh;">縦書きのコンテンツを<wbr />横書き言語に翻訳すると、<wbr />読みやすさが大きく損なわれる</div>
+
+<div style="display: flex; flex-direction: row; gap: 1cqh; margin-block: 1cqh; overflow-wrap: anywhere; word-break: normal; line-break: strict;">
+<div style="writing-mode: vertical-rl; font-size: 2cqh; line-height: 1.6; border: 1px solid #ccc; padding: 1cqh; height: 45cqh;"><p>日本語の縦書き本文はこのように自然に読める。段落が続いても違和感がない。文章の流れに沿って視線が上から下へ移動する。</p><p>日本語の縦書き本文はこのように自然に読める。段落が続いても違和感がない。文章の流れに沿って視線が上から下へ移動する。</p></div>
+<div style="writing-mode: vertical-rl; font-size: 2cqh; line-height: 1.6; border: 1px solid #ccc; padding: 1cqh; height: 45cqh;"><p>English text in vertical writing becomes very difficult to read as a long-form content. The eyes struggle to follow the flow of words arranged vertically.</p><p>English text in vertical writing becomes very difficult to read as a long-form content. The eyes struggle to follow the flow of words arranged vertically.</p></div>
+</div>
+
+<div style="font-size: 5cqh; margin-block: 2cqh;">縦組みマルチカラムで構成していれば<br />横書きとレイアウト構造を共有できる</div>
+
+<div style="display: flex; flex-direction: column; gap: 1cqw; justify-content: center; margin-block: 1cqh; overflow-wrap: anywhere; word-break: normal; line-break: strict;">
+<div style="writing-mode: vertical-rl; font-size: 2cqh; line-height: 1.6; border: 1px solid #ccc; padding: 1cqh; column-width: 28cqh; column-fill: auto; width: 14cqw; height: 80cqh;"><p>日本語の縦書き本文はこのように自然に読める。段落が続いても違和感がない。文章の流れに沿って視線が上から下へ移動する。</p><p>日本語の縦書き本文はこのように自然に読める。段落が続いても違和感がない。文章の流れに沿って視線が上から下へ移動する。</p></div>
+<div style="writing-mode: horizontal-tb; font-size: 2cqh; line-height: 1.6; border: 1px solid #ccc; padding: 1cqh; width: 14cqw; height: 80cqh;"><p>English text reads naturally in this layout. The page structure is preserved even though the writing direction has changed entirely.</p><p>English text reads naturally in this layout. The page structure is preserved even though the writing direction has changed entirely.</p></div>
 </div>
 
 </div>
 
 ---
 
-<!-- 21: CSSの不足 -->
+<!-- 9: CSSの不足 -->
 
 <div class="wrapper header-and-content">
 
@@ -303,12 +278,54 @@ date: 2026-03-30
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-- CSS Multi-column Layoutの<wbr />計算モデルに未整備がある
-- 縦書き固有の問題ではなく<wbr />CSS側の課題
-- CSSWGにIssue提出済み
+CSS Multi-column Layoutは<wbr />**有限なコンテナを段に分割する**モデル
 
-<div class="highlight-box" style="margin-block-start: auto;">
-<strong>詳細は予稿を参照</strong>
+- コンテナのサイズが先に決まる
+- コンテナを段数やカラム幅で分割する
+  - 溢れた段はオーバーフロー扱い
+
+<figure style="margin-left: -2cqw; margin-right: -4cqw;"><img src="@slide/multicol-current.png" alt="既存モデル（有限コンテナの分割）" style="max-width: 15cqw; max-height: 55cqh;" /></figure>
+
+しかしここまで示した用例では<wbr />**無限の領域に段を積みたい**
+
+- 段の高さは任意の値で決めたい
+  - <span style="font-size: 3.5cqh; color: #666;">スクロールポートに対する割合、具体的な寸法など</span>
+- 段はインライン方向に積み重なる
+- 段が増えた分コンテナも広がりたい
+  - <span style="font-size: 3.5cqh; color: #666;">コンテナ寸法に対する割合は注意が要りそう</span>
+
+<figure style="margin-left: -2cqw; margin-right: -4cqw;"><img src="@slide/multicol-whatweneed.png" alt="欲しいモデル（無限方向への積み重ね）" style="max-width: 15cqw; max-height: 55cqh;" /></figure>
+
+</div>
+</div>
+
+---
+
+<!-- 10: 既存モデルとの不整合 -->
+
+<div class="wrapper header-and-content">
+
+# CSSWGへの提案
+
+<div style="flex: 1; display: flex; flex-direction: column;">
+
+`column-width` を直ちに使用し<wbr />コンテナサイズを段の結果から導出する<wbr />**固定カラム幅モード**を提案
+
+- 既存：コンテナサイズ→段に分割
+- 提案：段の幅を固定→コンテナが従う
+  - <span style="font-size: 4cqh; color: #666;">寸法決定の因果関係を逆転させる</span>
+
+
+横書きでも「覗かせる」表現に有用
+
+縦書きマルチカラムにも自然に適合
+
+<div style="font-size: 3.5cqh; color: #666;">
+
+[w3c/csswg-drafts#13665](https://github.com/w3c/csswg-drafts/issues/13665)
+
+<figure style="margin-left: -2cqw; margin-right: 0;"><img src="@slide/multicol-whatweneed.png" alt="欲しいモデル（無限方向への積み重ね）" style="max-width: 15cqw; max-height: 55cqh;" /></figure>
+
 </div>
 
 </div>
@@ -316,27 +333,74 @@ date: 2026-03-30
 
 ---
 
-<!-- 22: スライド2の回収 → クライマックスへの助走 -->
+<!-- 10: 循環構造（図メイン） -->
 
-<div class="wrapper center">
+<div class="wrapper header-and-content">
 
-<div class="punch">
-<div style="font-size: 5cqh; color: #666; margin-block-end: 3cqh;">最初に見せた、<wbr />あの紙面の豊かさ</div>
-<div style="font-size: 5.5cqh; line-height: 1.8;">その正体は<br /><strong>方向を選べること</strong>自体にある</div>
-<div style="font-size: 4.5cqh; color: #666; margin-block-start: 3cqh;">横書きしかないWebにも、<wbr /><br />縦書きしかない文字体系にも<wbr /><br />存在しない表現の軸</div>
+# 技術面の課題だけではない
+
+<div style="flex: 1; display: flex; flex-direction: column;">
+
+<div style="font-size: 4cqh;">
+
+- 縦書きのWebサイトの**イメージがない**
+- だからコンテンツが生まれない
+- だから実需がない
+- だから仕様の優先度が上がらない
+- だから道具が整わない
+- だからイメージがもてない
+
 </div>
 
+イメージがないのは、<wbr />**発明**が必要だから
+
+連続メディアでの縦書きは<wbr />横スクロールのイメージが強すぎる
+
+循環構造がある。どこかを断たなければならない
+
+<figure style="margin-left: 0; margin-right: -4cqw"><img src="@slide/cycle.svg" alt="循環構造の円環図：イメージがない→コンテンツが生まれない→実需がない→仕様の優先度が上がらない→道具が整わない→イメージがない、の循環と断つポイント" style="max-width: 50cqw; max-height: 100cqh;" /></figure>
+
+</div>
 </div>
 
 ---
 
-<!-- 23: パンチ「Webには混用の世界が必要だ」（クライマックス） -->
+<!-- 11: イメージの供給 -->
+
+<div class="wrapper header-and-content">
+
+# 循環を断つために
+
+<div style="flex: 1; display: flex; flex-direction: column;">
+
+縦書きはもっとカジュアルに使える<wbr />という**イメージの供給**
+
+<div style="font-size: 4.5cqh;">
+
+- 部品単位でも縦書きの存在感を作れる
+- 縦スクロールで読める縦書きの周知
+- Webで縦書きを使う設計知見の蓄積
+
+</div>
+
+<div style="font-size: 3.5cqh; color: #666;">
+
+[縦書きWeb普及委員会](https://tategaki.github.io/) が<wbr />かつてやっていたことは、<wbr />まだ必要なのではないか
+
+</div>
+
+</div>
+</div>
+
+---
+
+<!-- 13: クライマックス -->
 
 <div class="wrapper center">
 
 <div class="punch">
 <div class="highlight-box">
-<div class="punch-text">Webには<br />混用の世界が必要だ</div>
+<div class="punch-text">混用の地平を拓くのは<br />混用できる言語を<br />使う我々だ</div>
 </div>
 </div>
 
@@ -344,68 +408,7 @@ date: 2026-03-30
 
 ---
 
-<!-- 24: 循環構造（図メイン） -->
-
-<div class="wrapper header-and-content">
-
-# 必要なのに、<wbr />なぜ立ち上がらないのか
-
-<div style="flex: 1; display: flex; flex-direction: column;">
-
-<figure><img src="@slide/cycle.svg" alt="循環構造の円環図：イメージがない→コンテンツが生まれない→実需がない→仕様の優先度が上がらない→道具が整わない→イメージがない、の循環と断つポイント" style="max-width: 70cqw; max-height: 65cqh;" /></figure>
-
-</div>
-</div>
-
----
-
-<!-- 25: 対比 -->
-
-<div class="wrapper center">
-
-<div class="punch">
-<div style="font-size: 5cqh; line-height: 1.8;">スマホWebには<strong>「痛み」</strong>があった<br /><br />縦書きWebには、ない</div>
-</div>
-
-</div>
-
----
-
-<!-- 26: イメージの供給（具体例付き） -->
-
-<div class="wrapper header-and-content">
-
-# 分断のこちら側から<wbr />イメージを供給する
-
-<div style="flex: 1; display: flex; flex-direction: column;">
-
-`writing-mode` が拓いた地平で<wbr />今すぐできること：
-
-- カード、プルクォート、<wbr />ヒーローセクション
-- コンポーネント単位の縦書きだけでも、<wbr />横書きサイトの中に<wbr />縦書きがある像を結べる
-
-<div style="margin-block-start: auto; font-size: 4cqh; color: #666;">
-デザイナーが縦書きを選択肢として<wbr />使いこなせる知識の普及が要る
-</div>
-
-</div>
-</div>
-
----
-
-<!-- 27: パンチ「行動提起」 -->
-
-<div class="wrapper center">
-
-<div class="punch">
-<div class="punch-text">今こそ、<wbr />そういう取り組みが<br />必要ではないか</div>
-</div>
-
-</div>
-
----
-
-<!-- 28: まとめ（パンチ文の再掲） -->
+<!-- 14: まとめ -->
 
 <div class="wrapper header-and-content">
 
@@ -413,15 +416,17 @@ date: 2026-03-30
 
 <div style="flex: 1; display: flex; flex-direction: column; font-size: 4.5cqh; line-height: 2;">
 
-**縦書きテキスト**と**縦書きのWebサイト**の間に分断がある
+紙面が証明した**縦横混在の豊かさ**を、Webはまだ持てていない
 
-接続フェーズ：縦組みマルチカラムで分断を埋める
+縦組みマルチカラムで、<wbr />縦書きを既存の縦スクロール世界に接続できる
+
+これはCJKだけでなく、<wbr />書字方向をまたぐ多言語Webの基盤になりうる
 
 CSS側の不足はあるが、<wbr />仕様の進化で対応を期待できる
 
-**Webには混用の世界が必要だ**
+技術とイメージの両面から循環を断つ取り組みが要る
 
-技術とイメージの両面から、<wbr />循環を断つ取り組みが要る
+**混用の地平を拓くのは我々だ**
 
 </div>
 </div>
