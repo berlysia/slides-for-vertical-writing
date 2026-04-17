@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="500" viewBox="0 0 540 500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <defs>
+    <marker id="cyc-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!--
+    中心: (270, 240), 半径R: 180, ノード半径r: 38
+    5ノード、270°から72°刻み（時計回り、SVG座標）
+
+    ノード位置 (cx + R*cos(θ), cy + R*sin(θ)):
+      実需        270°: (270, 60)
+      要件整理    342°: (441, 184)
+      仕様         54°: (376, 386)
+      実装        126°: (164, 386)
+      利用        198°: (99, 184)
+
+    矢印オフセット: r/R ≈ 12°
+    始点角度 = 出発ノード角度 + 12°
+    終点角度 = 到着ノード角度 - 12°
+  -->
+
+  <!-- 矢印: 実需(270°)→要件整理(342°), 282°→330° -->
+  <path d="M 307,64 A 180,180 0 0,1 426,150" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 要件整理(342°)→仕様(54°), 354°→42° -->
+  <path d="M 449,221 A 180,180 0 0,1 404,360" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 仕様(54°)→実装(126°), 66°→114° -->
+  <path d="M 343,404 A 180,180 0 0,1 197,404" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 実装(126°)→利用(198°), 138°→186° -->
+  <path d="M 136,360 A 180,180 0 0,1 91,221" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- 矢印: 利用(198°)→実需(270°), 210°→258° -->
+  <path d="M 114,150 A 180,180 0 0,1 233,64" fill="none" stroke="#666" stroke-width="2" marker-end="url(#cyc-arrow)"/>
+
+  <!-- ノード背景円 -->
+  <circle cx="270" cy="60" r="38" fill="#fff4e6" stroke="#e8a" stroke-width="2"/>
+  <circle cx="441" cy="184" r="38" fill="#e6f0ff" stroke="#88a" stroke-width="2"/>
+  <circle cx="376" cy="386" r="38" fill="#e6ffe6" stroke="#8a8" stroke-width="2"/>
+  <circle cx="164" cy="386" r="38" fill="#f0e6ff" stroke="#a8a" stroke-width="2"/>
+  <circle cx="99" cy="184" r="38" fill="#ffe6e6" stroke="#a88" stroke-width="2"/>
+
+  <!-- ノードテキスト -->
+  <text x="270" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#b64">実需</text>
+
+  <text x="441" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#448">要件整理</text>
+
+  <text x="376" y="392" text-anchor="middle" font-size="15" font-weight="bold" fill="#484">仕様</text>
+
+  <text x="164" y="392" text-anchor="middle" font-size="15" font-weight="bold" fill="#848">実装</text>
+
+  <text x="99" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#844">利用</text>
+
+  <!-- プレイヤー（薄く） -->
+  <text x="502" y="180" text-anchor="start" font-size="10" fill="#999">i18n WG</text>
+  <text x="502" y="194" text-anchor="start" font-size="10" fill="#999">JLTF</text>
+
+  <text x="420" y="440" text-anchor="middle" font-size="10" fill="#999">CSSWG</text>
+  <text x="420" y="454" text-anchor="middle" font-size="10" fill="#999">WHATWG HTML</text>
+
+  <text x="120" y="440" text-anchor="middle" font-size="10" fill="#999">ブラウザ</text>
+
+  <!-- 中央ラベル -->
+  <text x="270" y="236" text-anchor="middle" font-size="14" fill="#888">利用者の実需が</text>
+  <text x="270" y="256" text-anchor="middle" font-size="14" fill="#888">流れを回す</text>
+</svg>
