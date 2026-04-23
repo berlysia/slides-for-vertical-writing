@@ -1,5 +1,5 @@
 ---
-title: 縦書きWebの現在地概略 - #縦書き_study
+title: "縦書きWebの現在地概略 - #縦書き_study"
 description: 縦書きWebは、もうある。なのに、まだ珍しい。その足りなさがどこにあるのかを、このあと順にほどいていく
 author: berlysia
 date: 2026-04-16

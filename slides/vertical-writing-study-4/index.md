@@ -1,5 +1,5 @@
 ---
-title: 縦書きWebを身近なものにするために - #縦書き_study
+title: "縦書きWebを身近なものにするために - #縦書き_study"
 description: 仕様の不足を嘆く段階から、表現を発明して実需を作る段階へ
 author: berlysia
 date: 2026-04-17
