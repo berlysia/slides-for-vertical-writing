@@ -64,12 +64,12 @@
   <text x="79" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#844">道具</text>
   <text x="79" y="196" text-anchor="middle" font-size="10" fill="#844">が整わない</text>
 
-  <!-- 「断つ」ポイント: イメージ→コンテンツ弧の中点、角度306° -->
-  <!-- (250+180*cos(306°), 240+180*sin(306°)) = (356, 94) -->
-  <g transform="translate(356, 94)">
+  <!-- 「断つ」ポイント: 道具→イメージ弧の中点、角度234° -->
+  <!-- (250+180*cos(234°), 240+180*sin(234°)) = (144, 94) -->
+  <g transform="translate(144, 94)">
     <line x1="-10" y1="-16" x2="10" y2="16" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
     <line x1="10" y1="-16" x2="-10" y2="16" stroke="#e33" stroke-width="4" stroke-linecap="round"/>
-    <text x="20" y="4" font-size="13" font-weight="bold" fill="#e33">断つ</text>
+    <text x="-50" y="4" font-size="13" font-weight="bold" fill="#e33">断つ</text>
   </g>
 
   <!-- 中央ラベル -->
