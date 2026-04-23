@@ -1,3 +1,10 @@
+---
+title: 縦から目線のＣＳＳ
+description: 縦書きの世界で起こることを軸にCSSの挙動を一段深く知る
+author: berlysia
+date: 2025-02-21
+---
+
 <div class="wrapper center">
 
 # 縦から目線の<span style="text-orientation: upright;">ＣＳＳ</span>
