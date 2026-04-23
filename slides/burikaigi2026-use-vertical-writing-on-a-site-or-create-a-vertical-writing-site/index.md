@@ -1,5 +1,5 @@
 ---
-title: Webサイトで縦書きを使う、縦書きのWebサイトを作る
+title: Webサイトで縦書きを使う、縦書きのWebサイトを作る - BuriKaigi 2026
 description: Web技術における縦書きの現状と課題、そして未来への展望
 author: berlysia
 date: 2026-01-10

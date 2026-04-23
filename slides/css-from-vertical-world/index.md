@@ -1,5 +1,5 @@
 ---
-title: 縦から目線のＣＳＳ
+title: 縦から目線のＣＳＳ - Browser and UI #1 CSS
 description: 縦書きの世界で起こることを軸にCSSの挙動を一段深く知る
 author: berlysia
 date: 2025-02-21
