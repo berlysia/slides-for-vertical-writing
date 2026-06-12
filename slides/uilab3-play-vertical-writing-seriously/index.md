@@ -400,13 +400,13 @@ date: 2026-06-12
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
 
 <div class="qr-box">
-<img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" />
+<a href="https://slides.berlysia.net/demos/vertical-writing-play-kit/" target="_blank"><img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" /></a>
 <div style="font-size: 4.2cqh;">
 手元で動く例を<wbr />まとめました
 </div>
 </div>
 
-<div class="caption">slides.berlysia.net/demos/vertical-writing-play-kit/</div>
+<div class="caption"><a href="https://slides.berlysia.net/demos/vertical-writing-play-kit/" target="_blank">slides.berlysia.net/demos/vertical-writing-play-kit/</a></div>
 
 </div>
 </div>
@@ -468,7 +468,7 @@ date: 2026-06-12
 <div class="highlight-box" style="font-weight: bold;">縦書きのWebページ・UIを<wbr />考えてみませんか</div>
 
 <div class="qr-box">
-<img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" />
+<a href="https://slides.berlysia.net/demos/vertical-writing-play-kit/" target="_blank"><img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" /></a>
 <div style="font-size: 4.2cqh;">いま手元で開けます</div>
 </div>
 
