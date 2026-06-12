@@ -150,7 +150,7 @@ date: 2026-06-12
 <div class="wrapper center">
 
 <div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2); gap: 4cqh;">
-  <h1 class="upright" style="overflow: visible;">Webで縦書きを<wbr />真剣に遊びたい</h1>
+  <h1 class="upright" style="overflow: visible; font-size: 2em">Webで縦書きを<wbr />真剣に遊びたい</h1>
   <div style="font-size: 4cqh; color: #666; text-align: end;">UI Lab #3 / berlysia</div>
 </div>
 
@@ -166,11 +166,12 @@ date: 2026-06-12
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-- pixiv小説、カクヨム
-- `writing-mode` から<span class="tcu-all">10</span>年
-- なのに「縦書きのWebサイト」は<wbr />まだ珍しい
+- `writing-mode` 登場から<span class="tcu-all">10</span>年
+  - pixiv小説、カクヨム
+  - 教育系サービス
+- 「縦書きのWebサイト」は<wbr />まだ珍しい
 
-<div class="highlight-box">あるのに、選ばれていない</div>
+<div class="highlight-box">縦書きは使えるのに、<wbr />選ばれていない</div>
 
 </div>
 </div>
@@ -187,10 +188,30 @@ date: 2026-06-12
 
 <figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
 <img src="@slide/break.png" alt="縦書きにした文章が枠からはみ出し、横スクロールバーが生えている。文章は途中から表示され、書き出しが見えない" style="height: 44cqh;" />
-<figcaption class="caption">量が増えると横に育つ。<wbr />横スクロールが生えて、書き出しは右の奥</figcaption>
+<figcaption class="caption">横スクロールになると、文末がみえる</figcaption>
 </figure>
 
-<div class="highlight-box" style="font-size: 4.2cqh;">壊れる→怖い→特設サイト行き</div>
+<div class="highlight-box" style="font-size: 4.2cqh;">軽微なハマりどころが多数</div>
+
+</div>
+</div>
+
+---
+
+<!-- 3: 素朴に使うと壊れる。実物はキット遊び①の長い島で見せる -->
+
+<div class="wrapper header-and-content">
+
+# 素朴に使うと壊れる
+
+<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3cqh;">
+
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
+<img src="@slide/break-fixed.png" alt="縦書きにした文章が枠からはみ出し、横スクロールバーが生えている。文章は先頭から見えている" style="height: 44cqh;" />
+<figcaption class="caption">スクロール領域も縦書き指定すると解消する</figcaption>
+</figure>
+
+<div class="highlight-box" style="font-size: 4.2cqh;">少し知るだけで前に進める</div>
 
 </div>
 </div>
@@ -212,7 +233,7 @@ date: 2026-06-12
 <div class="depth-4">純縦書き</div>
 </div>
 
-<div class="caption">全面縦書きの覚悟は要らない。<wbr />右から順にぜんぶやります</div>
+<div class="caption">縦書きは段階的に取り入れられる</div>
 
 </div>
 </div>
@@ -229,7 +250,7 @@ date: 2026-06-12
 
 <figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
 <img src="@slide/play1.png" alt="横書きの記事の途中に、短歌が縦書きの島として置かれている" style="height: 54cqh;" />
-<figcaption class="caption">横書きの記事に、縦書きの引用。<wbr />視線の慣性を折る</figcaption>
+<figcaption class="caption">横書きの記事に、縦書きの引用<br />視線の流れを切り替え、目を留めさせる</figcaption>
 </figure>
 
 </div>
@@ -247,7 +268,7 @@ date: 2026-06-12
 
 <figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
 <img src="@slide/play2.png" alt="縦書きの引用と、混用・書体それぞれのトグルボタン" style="height: 72cqh;" />
-<figcaption class="caption">本当に効いてる？　外して確かめる。<wbr />変数は `writing-mode` と書体、1つずつ引く</figcaption>
+<figcaption class="caption">変数は `writing-mode` と書体の2つ<br />縦書きの効能はどんなものか？</figcaption>
 </figure>
 
 </div>
@@ -265,31 +286,8 @@ date: 2026-06-12
 
 <figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
 <img src="@slide/play3.png" alt="縦書きの帯ラベルがついた横書きカードUI" style="height: 42cqh;" />
-<figcaption class="caption">本の帯・背表紙をカードUIへ。<wbr />コンポーネント<span class="tcu-all">1</span>個から遊べる</figcaption>
+<figcaption class="caption">空間の使い方を変える。<br />コンポーネント<span class="tcu-all">1</span>個から遊ぶ</figcaption>
 </figure>
-
-</div>
-</div>
-
----
-
-<!-- 8: 遊び④ -->
-
-<div class="wrapper header-and-content">
-
-# 遊び④ 段に流す
-
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
-
-<figure style="margin: 0; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
-<img src="@slide/play4.png" alt="縦書き本文が横長の段に分かれて縦に積まれている" style="height: 56cqh;" />
-<figcaption class="caption">縦組みマルチカラム。<wbr />縦書き本文を縦スクロールのまま読ませるやつ</figcaption>
-</figure>
-
-- 行長は自分で当てる<wbr />（なのに指定通りにならない）
-- 「固定段幅で無限につらねる」<wbr />モデルが仕様にない → 出した
-
-<div class="caption">csswg-drafts#13665</div>
 
 </div>
 </div>
@@ -300,18 +298,44 @@ date: 2026-06-12
 
 <div class="wrapper header-and-content">
 
-# 遊び⑤ 進行方向ごと明け渡す
+# 遊び④ 横スクロールと付き合う
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
 
 <figure style="margin: 0; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
 <img src="@slide/play5.png" alt="走れメロスの純縦書きページ。右端から始まり、左下にscrollLeftのHUDが出ている" style="height: 46cqh;" />
-<figcaption class="caption">`html { writing-mode: vertical-rl }` で<wbr />ページは右から左へ、横スクロールに</figcaption>
+<figcaption class="caption">`writing-mode: vertical-rl で<br />右から左へ横スクロール</figcaption>
 </figure>
 
-- 縦ホイールでは進めない
-- <span class="tcu-all">6</span>行のJSで繋いだ
-- `scrollLeft` は負に育つ
+- ホイール、Home/End、PageDown/Upが機能しない
+  - ひとまずJSで対処可能
+  - <div class="caption"><a href="https://github.com/w3c/csswg-drafts/issues/10060" target="_blank">w3c/csswg-drafts #10060</a></div>
+- `scrollLeft` は負方向に成長
+  - 計算ロジックに注意がいる
+
+</div>
+</div>
+
+---
+
+<!-- 8: 遊び④ -->
+
+<div class="wrapper header-and-content">
+
+# 遊び⑤ 縦スクロールのまま縦書きに
+
+<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
+
+<figure style="margin: 0; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 1.5cqh;">
+<img src="@slide/play4.png" alt="縦書き本文が横長の段に分かれて縦に積まれている" style="height: 56cqh;" />
+<figcaption class="caption">縦組みマルチカラム。<br />縦書き本文を縦スクロールのまま読ませる</figcaption>
+</figure>
+
+- コンテナ高さの<wbr />成り行き指定が難しい
+- 行長の指定が難しい
+
+- どちらもハックがいる
+  - <div class="caption"><a href="https://github.com/w3c/csswg-drafts/issues/13665" target="_blank">w3c/csswg-drafts #13665</a></div>
 
 </div>
 </div>
@@ -322,7 +346,7 @@ date: 2026-06-12
 
 <div class="wrapper header-and-content">
 
-# 縦書き世界のUI？
+# 縦書き世界のUIを考える
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
@@ -356,7 +380,9 @@ date: 2026-06-12
 
 </div>
 
-<div class="caption">どれが自然かは、まだ決まっていない</div>
+<div class="caption">デファクトはまだない。<wbr />縦書きしかできない言語ではどうなる？</div>
+
+<div class="caption">縦書きに耐えるUIの作り方 →<wbr /> <a href="https://blog.berlysia.net/entry/2026-02-28-react-tokyo-fes-2026" target="_blank">縦書き対応のコンポーネントを作る</a></div>
 
 </div>
 
@@ -369,15 +395,14 @@ date: 2026-06-12
 
 <div class="wrapper header-and-content">
 
-# 道具は全部ここにある
+# お手元で見てみてください
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
 
 <div class="qr-box">
 <img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" />
 <div style="font-size: 4.2cqh;">
-いま見せたもの、コードごと<wbr />全部貼ってあります<br />
-説明はしません。<wbr />持って帰って、遊んで、<wbr />困ってください
+手元で動く例を<wbr />まとめました
 </div>
 </div>
 
@@ -392,16 +417,16 @@ date: 2026-06-12
 
 <div class="wrapper header-and-content">
 
-# 作られないから育たない
+# 縦書きは「できる」
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-- イメージがない
+- 縦書きの活用イメージがない
 - → 作られない
-- → 実需が見えない
+- → 需要が見えない・不足がわからない
 - → 優先度が上がらない
 
-<div class="highlight-box">「足りないから作れない」<wbr />ではない</div>
+<div class="highlight-box">「足りないから作れない」を<wbr />放置していたら永遠に育たない</div>
 
 </div>
 </div>
@@ -416,10 +441,16 @@ date: 2026-06-12
 
 <div style="flex: 1; display: flex; flex-direction: column;">
 
-- 考える、触る、困る、残す、出す
-- 一回は必ず困る<wbr />（さっきホイールで困った）
+- 触ってみて、楽しみながら、困ってみる
 - その困りごとに価値がある
-- 今日出てきたもの：<wbr />#13665 と <span class="tcu-all">6</span>行のJS
+  - ホイール操作
+  - スクロール位置
+  - マルチカラム
+  - `<canvas>` が縦書き未対応
+    - [whatwg/html #11449](https://github.com/whatwg/html/issues/11449)
+  - などなど……
+- ぜひバグ報告やIssue化を
+  - 頼ってもらってよいです
 
 </div>
 </div>
@@ -434,7 +465,7 @@ date: 2026-06-12
 
 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 3cqh;">
 
-<div class="highlight-box" style="font-weight: bold;">次のUI大喜利、<wbr />縦書きで一本どうですか</div>
+<div class="highlight-box" style="font-weight: bold;">縦書きのWebページ・UIを<wbr />考えてみませんか</div>
 
 <div class="qr-box">
 <img src="@slide/kit-qr.svg" alt="縦書き遊びキットのQRコード" />
@@ -451,7 +482,7 @@ date: 2026-06-12
 <div class="wrapper center">
 
 <div class="highlight-box" style="font-size: 5cqh; font-weight: bold; line-height: 2;">
-縦書きのあるWebサイト、<wbr />縦書きをメインにするWebサイトを、<wbr />ぜひ発明してみてください
+Webの縦書きは大きなフロンティア<wbr />ぜひ面白がって、遊びましょう
 </div>
 
 </div>

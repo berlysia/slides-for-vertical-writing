@@ -297,9 +297,9 @@ footer.site a { color: var(--accent); }
     </p>
 
     <blockquote class="tate-island tate">
-      ひさかたの　光のどけき　春の日に<br>
-      しづ心なく　花の散るらむ
-      <span class="attribution">紀友則『古今和歌集』</span>
+      逢ひ見ての　後の心に　くらぶれば<br>
+      昔はものを　思はざりけり
+      <span class="attribution">権中納言敦忠『拾遺和歌集』</span>
     </blockquote>
 
     <p>
@@ -398,10 +398,10 @@ footer.site a { color: var(--accent); }
   </div>
 
   <div class="demo-mixed demo-article" id="demo-mixed">
-    <h3>声に出して読む文章</h3>
+    <h3>縦書きが似合いそうな文章</h3>
     <p>
-      声に出して読まれることを前提にした文章がある。
-      一文字ずつ降りていく縦書きは、こうした文章に合うように見える。
+      縦書きで組まれた姿が自然に思い浮かぶ文章がある。
+      一文字ずつ降りていく形が合うように見える。
       本当にそうかを確かめたい。
     </p>
 
@@ -561,6 +561,10 @@ footer.site a { color: var(--accent); }
   <p class="pitfall">
     スクロールの座標系も変わる。<code>scrollLeft</code> は初期位置(右端)が 0 で、読み進むほど負の値に育つ。スクロール位置を扱うJSは大体ここで一回壊れる。壊れた箇所はメモして持ち帰ってほしい。
   </p>
+  <p>
+    壊れないように作る側の作法もある。CSSの論理プロパティで、書字方向に依存しないコンポーネントを組む話を書いた:
+    <a href="https://blog.berlysia.net/entry/2026-02-28-react-tokyo-fes-2026">縦書き対応のコンポーネントを作る — React Tokyo フェス2026</a>
+  </p>
 </section>
 
 </main>
@@ -572,7 +576,7 @@ footer.site a { color: var(--accent); }
     — スクロール方向の問題、縦組みマルチカラム、フォント、仕様の現在地など、今日は話さなかった道具が全部あります。
   </p>
   <p>
-    引用出典: 太宰治『走れメロス』・宮沢賢治「雨ニモマケズ」(いずれも<a href="https://www.aozora.gr.jp/">青空文庫</a>、パブリックドメイン)、紀友則『古今和歌集』。
+    引用出典: 太宰治『走れメロス』・宮沢賢治「雨ニモマケズ」(いずれも<a href="https://www.aozora.gr.jp/">青空文庫</a>、パブリックドメイン)、権中納言敦忠『拾遺和歌集』恋二・710(小倉百人一首 43番)。
   </p>
 </footer>
 
