@@ -16,9 +16,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vertical-slides dev --dir ./slides",
-    "dev:current": "vertical-slides dev --dir ./slides --name sigdc139-vertical-writing-website-requirements",
+    "dev:current": "vertical-slides dev --dir ./slides --name uilab3-play-vertical-writing-seriously",
     "build": "vertical-slides build --dir ./slides",
-    "build:current": "vertical-slides build --dir ./slides --name sigdc139-vertical-writing-website-requirements",
+    "build:current": "vertical-slides build --dir ./slides --name uilab3-play-vertical-writing-seriously",
     "build:all": "vertical-slides buildAll --dir ./slides",
     "test": "echo \"no tests\" && exit 0",
     "predeploy": "BASE_URL=https://slides.berlysia.net/ pnpm run build:all && pnpm run copy:demos",
