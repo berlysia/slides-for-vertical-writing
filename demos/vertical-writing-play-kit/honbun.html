@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>走れメロス(純縦書き) — 縦書き遊びキット</title>
+<link rel="icon" href="data:,">
+<style>
+/* ---------- これが本体。ページ丸ごと縦書きの世界にする ---------- */
+html {
+  writing-mode: vertical-rl;
+}
+
+/* ---------- 以下は体裁 ---------- */
+:root {
+  --ink: #2b2b2b;
+  --paper: #faf8f4;
+  --accent: #2a4073;
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 1.05rem;
+  line-height: 2.2;
+}
+main {
+  /* 縦書きでは inline-size = 行の長さ(高さ) */
+  inline-size: min(34em, calc(100svh - 9rem));
+  margin-inline: auto;        /* 行を上下中央に */
+  padding: 6rem 4rem 3rem;    /* 物理指定。上はヘッダー分 */
+}
+main p {
+  margin: 0;
+  text-indent: 1em;
+}
+h1.dai {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  margin: 0;
+  padding-inline-start: 1em;
+  margin-block-end: 2.5em;    /* 縦書きでは block-end = 左 */
+}
+h1.dai .author {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  margin-block-start: 1em;
+  color: #666;
+}
+.fin {
+  margin-block-start: 3em;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 横書きUIの小島: ヘッダー(縦書き主体 + 横書きUI の例) */
+header.bar {
+  writing-mode: horizontal-tb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #ddd5c8;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: 0.85rem;
+}
+header.bar a { color: var(--accent); }
+header.bar .hint { color: #777; }
+
+/* スクロール観察HUD: scrollLeft が負に育つのを眺める遊び */
+.hud {
+  writing-mode: horizontal-tb;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.4rem 1rem;
+  background: #22261f;
+  color: #e8e6df;
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: 0.8rem;
+  border-radius: 0 8px 0 0;
+}
+
+/* 読み進み(右から左へ満ちる) */
+.progress {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  pointer-events: none;
+}
+.progress > i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a href="./">← 遊びキットに戻る</a>
+  <span class="hint">ホイールを下に回すと、左へ進みます</span>
+</header>
+
+<main>
+  <h1 class="dai">走れメロス<span class="author">太宰治</span></h1>
+
+  <p>メロスは激怒した。必ず、かの<ruby>邪智暴虐<rt>じゃちぼうぎゃく</rt></ruby>の王を除かなければならぬと決意した。メロスには政治がわからぬ。メロスは、村の牧人である。笛を吹き、羊と遊んで暮して来た。けれども邪悪に対しては、人一倍に敏感であった。</p>
+  <p>きょう未明メロスは村を出発し、野を越え山越え、十里はなれた此のシラクスの市にやって来た。メロスには父も、母も無い。女房も無い。十六の、内気な妹と二人暮しだ。この妹は、村の或る律気な一牧人を、近々、花婿として迎える事になっていた。結婚式も間近かなのである。メロスは、それゆえ、花嫁の衣裳やら祝宴の御馳走やらを買いに、はるばる市にやって来たのだ。先ず、その品々を買い集め、それから都の大路をぶらぶら歩いた。</p>
+  <p>メロスには竹馬の友があった。セリヌンティウスである。今は此のシラクスの市で、石工をしている。その友を、これから訪ねてみるつもりなのだ。久しく逢わなかったのだから、訪ねて行くのが楽しみである。</p>
+  <p>歩いているうちにメロスは、まちの様子を怪しく思った。ひっそりしている。もう既に日も落ちて、まちの暗いのは当りまえだが、けれども、なんだか、夜のせいばかりでは無く、市全体が、やけに寂しい。のんきなメロスも、だんだん不安になって来た。路で逢った若い衆をつかまえて、何かあったのか、二年まえに此の市に来たときは、夜でも皆が歌をうたって、まちは賑やかであった筈だが、と質問した。若い衆は、首を振って答えなかった。しばらく歩いて老爺に逢い、こんどはもっと、語勢を強くして質問した。老爺は答えなかった。メロスは両手で老爺のからだをゆすぶって質問を重ねた。老爺は、あたりをはばかる低声で、わずか答えた。</p>
+  <p>「王様は、人を殺します。」</p>
+  <p>「なぜ殺すのだ。」</p>
+  <p>「悪心を抱いている、というのですが、誰もそんな、悪心を持っては居りませぬ。」</p>
+  <p>「たくさんの人を殺したのか。」</p>
+  <p>「はい、はじめは王様の妹婿さまを。それから、御自身のお世嗣を。それから、妹さまを。それから、妹さまの御子さまを。それから、皇后さまを。それから、賢臣のアレキス様を。」</p>
+  <p>「おどろいた。国王は乱心か。」</p>
+  <p>「いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。」</p>
+  <p>聞いて、メロスは激怒した。「呆れた王だ。生かして置けぬ。」</p>
+  <p>メロスは、単純な男であった。買い物を、背負ったままで、のそのそ王城にはいって行った。たちまち彼は、<ruby>巡邏<rt>じゅんら</rt></ruby>の警吏に捕縛された。調べられて、メロスの懐中からは短剣が出て来たので、騒ぎが大きくなってしまった。メロスは、王の前に引き出された。</p>
+  <p>「この短刀で何をするつもりであったか。言え！」暴君ディオニスは静かに、けれども威厳を以て問いつめた。その王の顔は蒼白で、眉間の皺は、刻み込まれたように深かった。</p>
+  <p>「市を暴君の手から救うのだ。」とメロスは悪びれずに答えた。</p>
+  <p>「おまえがか？」王は、<ruby>憫笑<rt>びんしょう</rt></ruby>した。「仕方の無いやつじゃ。おまえには、わしの孤独がわからぬ。」</p>
+  <p>「言うな！」とメロスは、いきり立って反駁した。「人の心を疑うのは、最も恥ずべき悪徳だ。王は、民の忠誠をさえ疑って居られる。」</p>
+  <p>「疑うのが、正当の心構えなのだと、わしに教えてくれたのは、おまえたちだ。人の心は、あてにならない。人間は、もともと私慾のかたまりさ。信じては、ならぬ。」暴君は落着いて呟き、ほっと溜息をついた。「わしだって、平和を望んでいるのだが。」</p>
+  <p>「なんの為の平和だ。自分の地位を守る為か。」こんどはメロスが嘲笑した。「罪の無い人を殺して、何が平和だ。」</p>
+  <p>「だまれ、下賤の者。」王は、さっと顔を挙げて報いた。「口では、どんな清らかな事でも言える。わしには、人の腹綿の奥底が見え透いてならぬ。おまえだって、いまに、磔になってから、泣いて詫びたって聞かぬぞ。」</p>
+
+  <p class="fin">(ここまで。続きは<a href="https://www.aozora.gr.jp/cards/000035/files/1567_14913.html">青空文庫</a>で)</p>
+</main>
+
+<div class="hud" aria-hidden="true">scrollLeft: <span id="sl">0</span>(<span id="pct">0</span>%)</div>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<script>
+// scrollLeft が負に育つのを眺める遊び。
+// vertical-rl のルートでは、初期位置(右端)が 0 で、読み進む(左へ行く)ほど負になる。
+const sl = document.getElementById("sl");
+const pct = document.getElementById("pct");
+const bar = document.getElementById("bar");
+const root = document.scrollingElement;
+
+function update() {
+  const max = root.scrollWidth - root.clientWidth;
+  const progress = max > 0 ? Math.abs(root.scrollLeft) / max : 0;
+  sl.textContent = Math.round(root.scrollLeft);
+  pct.textContent = Math.round(progress * 100);
+  bar.style.width = `${progress * 100}%`;
+}
+document.addEventListener("scroll", update, { passive: true });
+update();
+
+// 縦ホイールを進行方向(左)へマップする。
+// Chromiumは縦ホイールを縦スクロールにしか使わないため、
+// 素のままだとマウスホイールでこのページを読み進められない。
+addEventListener("wheel", (e) => {
+  if (e.ctrlKey) return;                                // ピンチズームは奪わない
+  if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // 横入力はネイティブに任せる
+  e.preventDefault();
+  root.scrollLeft -= e.deltaY;
+}, { passive: false });
+</script>
+
+</body>
+</html>

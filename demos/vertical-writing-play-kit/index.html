@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>縦書き遊びキット — Webで縦書きを真剣に遊びたい</title>
+<link rel="icon" href="data:,">
+<style>
+/* ---------- ページ全体の体裁(レシピ外) ---------- */
+:root {
+  --ink: #2b2b2b;
+  --paper: #faf8f4;
+  --accent: #2a4073;
+  --band: #b3402a;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+}
+main, header.site, footer.site {
+  max-inline-size: 42rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+header.site {
+  padding-block: 3rem 1rem;
+}
+header.site h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+header.site p { color: #555; }
+nav.toc ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+nav.toc a { color: var(--accent); }
+section.play {
+  padding-block: 3rem;
+  border-block-start: 1px solid #ddd5c8;
+}
+section.play > h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+section.play > h2 small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #777;
+  letter-spacing: 0.1em;
+}
+.effect {
+  font-size: 0.95rem;
+  color: #555;
+  margin-block-end: 2rem;
+}
+
+/* デモ記事の体裁 */
+.demo-article {
+  background: #fff;
+  border: 1px solid #e5ddd0;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+}
+.demo-article h3 { margin-block-start: 0; }
+.tate {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+}
+.attribution {
+  display: block;
+  font-size: 0.8em;
+  color: #777;
+  margin-block-start: 1em;
+}
+
+/* レシピと困りどころ */
+.recipe {
+  margin-block-start: 2rem;
+}
+.recipe figcaption {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-block-end: 0.5rem;
+}
+.recipe pre {
+  position: relative;
+  background: #22261f;
+  color: #e8e6df;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.recipe button.copy {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+  background: transparent;
+  color: #e8e6df;
+  cursor: pointer;
+}
+.recipe button.copy:hover { background: #3a4035; }
+.pitfall {
+  margin-block-start: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fdf3e7;
+  border-inline-start: 4px solid var(--band);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+}
+.pitfall::before {
+  content: "困りどころの先回り — ";
+  font-weight: bold;
+}
+.spec-gap {
+  margin-block-start: 1rem;
+  padding: 0.75rem 1rem;
+  background: #edf1fa;
+  border-inline-start: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+}
+.spec-gap::before {
+  content: "仕様の欠落 — ";
+  font-weight: bold;
+}
+
+/* トグルボタン */
+button.toggle {
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  margin-block-end: 1.5rem;
+}
+button.toggle[aria-pressed="true"] {
+  background: transparent;
+  color: var(--accent);
+}
+
+footer.site {
+  padding-block: 3rem;
+  border-block-start: 1px solid #ddd5c8;
+  font-size: 0.85rem;
+  color: #666;
+}
+footer.site a { color: var(--accent); }
+
+/* ---------- ここから下が「配る道具」と一致するスタイル ---------- */
+
+/* 遊び①: 島を置く */
+.tate-island {
+  writing-mode: vertical-rl;
+  inline-size: min(16em, 60svh); /* 行の長さ(=高さ)。決めないと縦に間延びする */
+  margin: 2.5em auto;            /* 横書きの流れの中で中央に置く */
+  line-height: 2.2;
+}
+
+/* 遊び①: 長すぎる島の展示台。失敗をページを壊さずに見せる */
+.overflow-stage {
+  overflow-x: auto;
+  border: 2px dashed var(--band);
+  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+/* 直し版: はみ出しの置き場にも縦書きを継がせる */
+.tate-stage {
+  writing-mode: vertical-rl; /* スクロールの開始位置はコンテナの writing-mode で決まる */
+  max-width: 100%;           /* 縦書きの枠は幅が内容に合わせて広がるので、親に収める */
+  border-color: var(--accent);
+}
+
+/* 遊び②: 引き算で確かめる。行長(inline-size)と中央寄せは両状態で共通 */
+.demo-mixed .quote {
+  writing-mode: vertical-rl;
+  inline-size: min(12em, 50svh);
+  margin: 2em auto;
+}
+.demo-mixed.plain .quote {
+  writing-mode: horizontal-tb; /* 動かす変数はこれだけ */
+}
+/* 書体の変数だけを外す(縦書きとは独立に引ける) */
+.demo-mixed.plain-font .tate {
+  font-family: inherit;
+}
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-end: 1.5rem;
+}
+.toggle-row button.toggle { margin-block-end: 0; }
+
+/* 遊び④: 段に流す(縦組みマルチカラム) */
+.tate-columns {
+  writing-mode: vertical-rl;
+  column-width: 13em;     /* 段の行長(縦書きでは高さ)。仕様上は理想値の扱い */
+  column-gap: 2.5em;
+  column-rule: 1px solid #e5ddd0;
+  margin: 0 auto;         /* 横方向の中央寄せ(物理指定が簡単) */
+}
+
+/* 遊び⑤: 進行方向ごと明け渡す */
+.tate-frame {
+  inline-size: 100%;
+  block-size: 420px;
+  border: 1px solid #e5ddd0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* 遊び③: 部品にする */
+.card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #e5ddd0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card-obi {
+  writing-mode: vertical-rl;
+  background: var(--band);
+  color: #fff;
+  padding: 0.75em 0.4em;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+.tcu {
+  text-combine-upright: all; /* 包んだ範囲を丸ごと1文字幅に詰める(縦中横) */
+}
+.card-body { padding: 1rem 1.25rem; flex: 1; }
+.card-body h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+.card-body p { margin: 0; font-size: 0.9rem; color: #555; }
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <h1>縦書き遊びキット</h1>
+  <p>
+    UI Lab #3「Webで縦書きを真剣に遊びたい」の配布物。コードはすべてコピペ歓迎。
+    説明はしません。持って帰って、遊んで、困ってください。
+  </p>
+  <nav class="toc" aria-label="目次">
+    <ol>
+      <li><a href="#play-1">遊び① 島を置く</a></li>
+      <li><a href="#play-2">遊び② 引き算で確かめる</a></li>
+      <li><a href="#play-3">遊び③ 部品にする</a></li>
+      <li><a href="#play-4">遊び④ 段に流す</a></li>
+      <li><a href="#play-5">遊び⑤ 進行方向ごと明け渡す</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============================================================ -->
+<section class="play" id="play-1">
+  <h2><small>遊び①</small>島を置く</h2>
+  <p class="effect">
+    横書きの流れの中に縦書きの島を置くと、視線の慣性が折れて、読みの時間密度が変わる。
+    まずはスクロールしながら下の記事を読んでみてほしい。
+  </p>
+
+  <article class="demo-article">
+    <h3>読む速さは、いつも同じではない</h3>
+    <p>
+      文章を読んでいるとき、視線はほとんど自動で走っている。
+      左から右へ、上から下へ。Webページの大半はこの慣性の上に設計されていて、
+      読み手がそれを意識することは少ない。
+    </p>
+    <p>
+      その流れの途中に、向きの違うテキストを置いてみる。
+    </p>
+
+    <blockquote class="tate-island tate">
+      ひさかたの　光のどけき　春の日に<br>
+      しづ心なく　花の散るらむ
+      <span class="attribution">紀友則『古今和歌集』</span>
+    </blockquote>
+
+    <p>
+      ここで読む速さが一度変わる。少なくとも私は変わる。
+      流し読みの慣性が切れて、その一角だけ時間の密度が上がる。
+      紙の雑誌では当たり前の技術で、見出しだけ縦に組む、引用だけ縦に置く、
+      という形で読みの速度はずっと操作されてきた。
+    </p>
+    <p>
+      もう少し長い文章で試す。行が増えると、島は横に育つ。
+    </p>
+
+    <blockquote class="tate-island tate">
+      メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。
+      メロスには政治がわからぬ。メロスは、村の牧人である。
+      笛を吹き、羊と遊んで暮して来た。けれども邪悪に対しては、人一倍に敏感であった。
+      <span class="attribution">太宰治『走れメロス』</span>
+    </blockquote>
+
+    <p>
+      雑誌の一段落ぶんくらいの長さを、そのまま島にするとこうなる。
+    </p>
+
+    <div class="overflow-stage">
+      <blockquote class="tate-island tate">
+        きょう未明メロスは村を出発し、野を越え山越え、十里はなれた此のシラクスの市にやって来た。メロスには父も、母も無い。女房も無い。十六の、内気な妹と二人暮しだ。この妹は、村の或る律気な一牧人を、近々、花婿として迎える事になっていた。結婚式も間近かなのである。メロスは、それゆえ、花嫁の衣裳やら祝宴の御馳走やらを買いに、はるばる市にやって来たのだ。先ず、その品々を買い集め、それから都の大路をぶらぶら歩いた。メロスには竹馬の友があった。セリヌンティウスである。今は此のシラクスの市で、石工をしている。その友を、これから訪ねてみるつもりなのだ。久しく逢わなかったのだから、訪ねて行くのが楽しみである。歩いているうちにメロスは、まちの様子を怪しく思った。ひっそりしている。もう既に日も落ちて、まちの暗いのは当りまえだが、けれども、なんだか、夜のせいばかりでは無く、市全体が、やけに寂しい。のんきなメロスも、だんだん不安になって来た。
+        <span class="attribution">太宰治『走れメロス』</span>
+      </blockquote>
+    </div>
+
+    <p>
+      横スクロールが生えた。行長を決めても、量が増えれば島は block 方向へ育ち続け、いずれ親の幅を超える。
+      しかも初期表示で見えているのは文章の末尾側で、書き出しは右の奥にある。
+      スクロールの開始位置はスクロールコンテナ自身の writing-mode で決まるためで、この枠は横書きのままにしてある。
+    </p>
+
+    <p>
+      枠にも縦書きを継がせると、書き出し側から始まる。
+    </p>
+
+    <div class="overflow-stage tate-stage">
+      <blockquote class="tate-island tate">
+        きょう未明メロスは村を出発し、野を越え山越え、十里はなれた此のシラクスの市にやって来た。メロスには父も、母も無い。女房も無い。十六の、内気な妹と二人暮しだ。この妹は、村の或る律気な一牧人を、近々、花婿として迎える事になっていた。結婚式も間近かなのである。メロスは、それゆえ、花嫁の衣裳やら祝宴の御馳走やらを買いに、はるばる市にやって来たのだ。先ず、その品々を買い集め、それから都の大路をぶらぶら歩いた。メロスには竹馬の友があった。セリヌンティウスである。今は此のシラクスの市で、石工をしている。その友を、これから訪ねてみるつもりなのだ。久しく逢わなかったのだから、訪ねて行くのが楽しみである。歩いているうちにメロスは、まちの様子を怪しく思った。ひっそりしている。もう既に日も落ちて、まちの暗いのは当りまえだが、けれども、なんだか、夜のせいばかりでは無く、市全体が、やけに寂しい。のんきなメロスも、だんだん不安になって来た。
+        <span class="attribution">太宰治『走れメロス』</span>
+      </blockquote>
+    </div>
+
+    <p>
+      縦書きの本文を流すなら、この伸び続ける幅とどう付き合うかを先に決めることになる。
+      付き合い方の続きは遊び④で扱う。
+    </p>
+
+    <p>
+      これをWebでやってはいけない理由は特にない。プロパティは揃っているし、ブラウザは普通に組む。
+      やっている実例が少ないだけである。
+    </p>
+  </article>
+
+  <figure class="recipe">
+    <figcaption>レシピ(動く最小形。見た目の装飾は省略)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>.tate-island {
+  writing-mode: vertical-rl;
+  inline-size: min(16em, 60svh); /* 行の長さ(=高さ)。決めないと縦に間延びする */
+  margin: 2.5em auto;            /* 横書きの流れの中で中央に置く */
+  line-height: 2.2;
+}</code></pre>
+  </figure>
+  <p class="pitfall">
+    縦書きでは寸法の役割が回転する。<code>inline-size</code> が行の長さ(=高さ)で、決めないと行長がビューポート任せになり、縦に間延びする。文章が増えたときに島が横へ育つのは block 方向の自然な成長で、こちらを抑えたいなら <code>block-size</code> や <code>overflow</code> の出番になる。
+  </p>
+
+  <figure class="recipe">
+    <figcaption>レシピ(はみ出しの置き場にも縦書きを継がせる)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>.tate-stage {
+  overflow-x: auto;
+  writing-mode: vertical-rl; /* スクロールの開始位置はコンテナの writing-mode で決まる */
+  max-width: 100%;           /* 縦書きの枠は幅が内容に合わせて広がるので、親に収める */
+}</code></pre>
+  </figure>
+  <p class="pitfall">
+    横書きの枠に縦書きをはみ出させると、スクロールの開始位置が左端=文章の末尾側になり、読み手は書き出しを探して右へ戻ることになる。はみ出しを受ける枠の writing-mode まで含めて決める必要がある。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section class="play" id="play-2">
+  <h2><small>遊び②</small>引き算で確かめる</h2>
+  <p class="effect">
+    本当に効いているのかは、外して確かめるのが早い。切替は <code>writing-mode</code> 1プロパティで済む。
+    印象に効く変数はここでは2つ(縦書きと書体)あるので、別々に引けるようにした。
+  </p>
+
+  <div class="toggle-row">
+    <button class="toggle" id="mix-toggle" aria-pressed="false">混用をやめてみる</button>
+    <button class="toggle" id="font-toggle" aria-pressed="false">明朝をやめてみる</button>
+  </div>
+
+  <div class="demo-mixed demo-article" id="demo-mixed">
+    <h3>声に出して読む文章</h3>
+    <p>
+      声に出して読まれることを前提にした文章がある。
+      一文字ずつ降りていく縦書きは、こうした文章に合うように見える。
+      本当にそうかを確かめたい。
+    </p>
+
+    <blockquote class="quote tate">
+      雨ニモマケズ<br>
+      風ニモマケズ<br>
+      雪ニモ夏ノ暑サニモマケヌ<br>
+      丈夫ナカラダヲモチ
+      <span class="attribution">宮沢賢治「雨ニモマケズ」</span>
+    </blockquote>
+
+    <p>
+      横書きに戻しても、行長と中央寄せはそのままにしてある。動くのは進行方向だけで、
+      それでも読み味が変わるなら、その差は縦書きによるものだ。
+      残りの「特別さ」は明朝体の仕事かもしれない。
+      このため、書体だけを外すトグルも別に置いた。1変数ずつ引いて確かめられる。
+    </p>
+  </div>
+
+  <figure class="recipe">
+    <figcaption>レシピ(トグルの仕掛けそのもの)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>/* 行長(inline-size)と中央寄せは両状態で共通。
+   inline-size と margin の論理・物理の対応は要素自身の writing-mode に従って回る */
+.demo-mixed .quote {
+  writing-mode: vertical-rl;
+  inline-size: min(12em, 50svh);
+  margin: 2em auto;
+}
+.demo-mixed.plain .quote {
+  writing-mode: horizontal-tb; /* 動かす変数はこれだけ */
+}
+/* 書体の変数だけを外す(縦書きとは独立に引ける) */
+.demo-mixed.plain-font .tate {
+  font-family: inherit;
+}
+/* JSはクラス1個の付け替えだけ */
+// demoRoot.classList.toggle("plain");</code></pre>
+  </figure>
+  <p class="pitfall">
+    切り替えると要素の高さが変わり、ページ全体がガタッと動く。実プロダクトで切替UIを出すなら、外側に <code>min-block-size</code> で場所を予約しておくと跳ねない。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section class="play" id="play-3">
+  <h2><small>遊び③</small>部品にする</h2>
+  <p class="effect">
+    本文を縦書きにしなくても、コンポーネント1個から遊べる。本の帯や背表紙がやってきたことを、カードUIに持ち込む。
+  </p>
+
+  <div class="card-grid">
+    <article class="card">
+      <div class="card-obi tate">特集</div>
+      <div class="card-body">
+        <h3>行間と読み速度</h3>
+        <p>line-height を 1.5 から 2.2 まで動かして読み比べる。</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-obi tate">連載第<span class="tcu">12</span>回</div>
+      <div class="card-body">
+        <h3>ルビ仕様を読み直す</h3>
+        <p>ふりがなのために用意された仕様の密度について。</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-obi tate">新着</div>
+      <div class="card-body">
+        <h3>行頭行末の約物</h3>
+        <p>括弧と読点の、行頭・行末での扱いの話。</p>
+      </div>
+    </article>
+  </div>
+
+  <figure class="recipe">
+    <figcaption>レシピ(帯ラベルの最小形)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>.card { display: flex; }
+.card-obi {
+  writing-mode: vertical-rl;
+  padding: 0.75em 0.4em;
+  letter-spacing: 0.15em;
+}
+.tcu {
+  text-combine-upright: all; /* 包んだ範囲を丸ごと1文字幅に詰める(縦中横) */
+}</code></pre>
+  </figure>
+  <p class="pitfall">
+    縦書きの中で数字は寝る(横倒しになる)。<code>&lt;span class="tcu"&gt;12&lt;/span&gt;</code> のように包んで <code>text-combine-upright: all</code> で縦中横にする。<code>all</code> は包んだ範囲の全文字を1文字ぶんの幅に詰め込む指定なので、何桁で使うかは書き手の責任になる(潰れずに収まるのは実用上2〜3桁まで)。桁数で自動制御する <code>digits</code> も仕様にはあるが、手元のChromiumは解さない。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section class="play" id="play-4">
+  <h2><small>遊び④</small>段に流す(縦組みマルチカラム)</h2>
+  <p class="effect">
+    本文ごと縦書きにしたい。一方で、縦スクロールの世界は捨てたくない。
+    そのための接続が段組みだ。新聞がずっとやってきた形を、Webの縦スクロールに乗せる。
+  </p>
+
+  <article class="demo-article">
+    <div class="tate-columns tate">
+      <p>メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。メロスには政治がわからぬ。メロスは、村の牧人である。笛を吹き、羊と遊んで暮して来た。けれども邪悪に対しては、人一倍に敏感であった。きょう未明メロスは村を出発し、野を越え山越え、十里はなれた此のシラクスの市にやって来た。メロスには父も、母も無い。女房も無い。十六の、内気な妹と二人暮しだ。この妹は、村の或る律気な一牧人を、近々、花婿として迎える事になっていた。結婚式も間近かなのである。メロスは、それゆえ、花嫁の衣裳やら祝宴の御馳走やらを買いに、はるばる市にやって来たのだ。先ず、その品々を買い集め、それから都の大路をぶらぶら歩いた。メロスには竹馬の友があった。セリヌンティウスである。今は此のシラクスの市で、石工をしている。その友を、これから訪ねてみるつもりなのだ。久しく逢わなかったのだから、訪ねて行くのが楽しみである。</p>
+    </div>
+    <span class="attribution">太宰治『走れメロス』</span>
+  </article>
+
+  <figure class="recipe">
+    <figcaption>レシピ(縦書き本文を縦スクロールに接続する)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>.tate-columns {
+  writing-mode: vertical-rl;
+  column-width: 13em;     /* 段の行長(縦書きでは高さ)。仕様上は理想値の扱い */
+  column-gap: 2.5em;
+  column-rule: 1px solid #e5ddd0;
+  margin: 0 auto;         /* 横方向の中央寄せ(物理指定が簡単) */
+}</code></pre>
+  </figure>
+  <p class="pitfall">
+    段の行長は <code>column-width</code> で自分から当てに行く必要があるが、指定した値がそのまま使われるとは限らない。仕様上この値は理想値の扱いで、実際の行長は空間を段数で割り直した長さに引き伸ばされる。実際、このデモの段も指定より長い行で組まれている(手元の計測では13em=208px指定に対して約240px)。コンテナの inline-size を段数×行長から逆算して固定すれば指定値は通るが、必要な段数は内容の行数と空間で変動するため、CSSだけで先に決めるのは実質成立しない。きっちり通したければ現状はJSで測って再計算するしかなく、このデモは「だいたい13em」で割り切っている(JSの話はJSConf JP 2025のスライド参照)。
+  </p>
+  <p class="spec-gap">
+    そもそも、いまのマルチカラムには「与えられた空間を段に分ける」モデルしかない。「固定の段幅のまま、無限の空間に段をつらね続ける」という発想が仕様に存在しない。この欠落は CSSWG に問題として提起してある:
+    <a href="https://github.com/w3c/csswg-drafts/issues/13665">csswg-drafts#13665 — Fixed column width mode for multi-column layout</a>。起票したのは私で、困りごとはここまで持っていける、という実例として置いておく。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section class="play" id="play-5">
+  <h2><small>遊び⑤</small>進行方向ごと明け渡す</h2>
+  <p class="effect">
+    ここまでは縦スクロールの中の遊びだった。最後は、ページの進行方向そのものを縦書きに渡す。
+    root に <code>writing-mode: vertical-rl</code> を置くと、ページは右から左へ進む横スクロールになる。
+    下の枠の中でホイールを回すと、そのまま左へ進む。
+  </p>
+
+  <iframe class="tate-frame" src="./honbun.html" title="走れメロス(純縦書き・横スクロール)" loading="lazy"></iframe>
+  <p><a href="./honbun.html">全画面で開く →</a> 左下のHUDで <code>scrollLeft</code> が負に育っていくのを眺められる。</p>
+
+  <figure class="recipe">
+    <figcaption>レシピ(root に置くだけ)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>html {
+  writing-mode: vertical-rl;
+}</code></pre>
+  </figure>
+  <p class="pitfall">
+    素朴に置いただけでは、Chromiumではマウスの縦ホイールでこのページを読み進められない。縦ホイールは縦スクロール専用にマップされていて、このページには縦スクロールがないため無反応になる。トラックパッドの横スワイプだけが効く。
+  </p>
+
+  <figure class="recipe">
+    <figcaption>レシピ(縦ホイールを進行方向へ繋ぐ。上のデモにも入っている)</figcaption>
+    <pre><button class="copy" data-copy>コピー</button><code>addEventListener("wheel", (e) => {
+  if (e.ctrlKey) return;                                // ピンチズームは奪わない
+  if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // 横入力はネイティブに任せる
+  e.preventDefault();
+  document.scrollingElement.scrollLeft -= e.deltaY;
+}, { passive: false });</code></pre>
+  </figure>
+  <p class="pitfall">
+    スクロールの座標系も変わる。<code>scrollLeft</code> は初期位置(右端)が 0 で、読み進むほど負の値に育つ。スクロール位置を扱うJSは大体ここで一回壊れる。壊れた箇所はメモして持ち帰ってほしい。
+  </p>
+</section>
+
+</main>
+
+<footer class="site">
+  <p>
+    続きはこちら:
+    <a href="https://slides.berlysia.net/">berlysia の縦書きWebスライド集</a>
+    — スクロール方向の問題、縦組みマルチカラム、フォント、仕様の現在地など、今日は話さなかった道具が全部あります。
+  </p>
+  <p>
+    引用出典: 太宰治『走れメロス』・宮沢賢治「雨ニモマケズ」(いずれも<a href="https://www.aozora.gr.jp/">青空文庫</a>、パブリックドメイン)、紀友則『古今和歌集』。
+  </p>
+</footer>
+
+<script>
+// コピーボタン
+for (const btn of document.querySelectorAll("button.copy")) {
+  btn.addEventListener("click", async () => {
+    const code = btn.closest("pre").querySelector("code").innerText;
+    try {
+      await navigator.clipboard.writeText(code);
+      btn.textContent = "コピーしました";
+    } catch {
+      btn.textContent = "コピーできません";
+    }
+    setTimeout(() => { btn.textContent = "コピー"; }, 1500);
+  });
+}
+
+// 遊び②: 混用トグルと書体トグル。変数は1つずつ引ける
+const toggleBtn = document.getElementById("mix-toggle");
+const demoMixed = document.getElementById("demo-mixed");
+toggleBtn.addEventListener("click", () => {
+  const plain = demoMixed.classList.toggle("plain");
+  toggleBtn.setAttribute("aria-pressed", String(plain));
+  toggleBtn.textContent = plain ? "混用に戻す" : "混用をやめてみる";
+});
+
+const fontBtn = document.getElementById("font-toggle");
+fontBtn.addEventListener("click", () => {
+  const plainFont = demoMixed.classList.toggle("plain-font");
+  fontBtn.setAttribute("aria-pressed", String(plainFont));
+  fontBtn.textContent = plainFont ? "明朝に戻す" : "明朝をやめてみる";
+});
+</script>
+
+</body>
+</html>
