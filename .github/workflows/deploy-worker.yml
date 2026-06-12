@@ -42,6 +42,9 @@ jobs:
       - name: Build slides
         run: pnpm run build:all
 
+      - name: Copy demos into pages
+        run: pnpm run copy:demos
+
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@9681c2997648301493e78cacbfb790a9f19c833f # v3.9.0 (SHA固定)
         with:
