@@ -817,7 +817,7 @@ CSSファイルのバイト数を気にするような道具だと、CSS側の�
 
 <div class="wrapper header-and-content">
 
-# 縦書き目線ではうれしいの？
+# 縦書き目線でうれしいか
 
 <div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4cqh;">
 
