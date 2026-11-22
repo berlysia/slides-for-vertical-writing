@@ -352,7 +352,7 @@ u.bousen {
 .mm-cell.ng { border-color: #d33; }
 .mm-icon { position: absolute; inset-block-start: 1cqh; inset-inline-start: 1cqh; font-size: 4.08cqh; line-height: 1; }
 
-/* 今日の話：3段階を同じ形の列で並べる */
+/* お品書き：3段階を同じ形の列で並べる */
 .agenda { display: flex; flex-direction: column; gap: var(--sp-l); }
 .agenda-item { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-s); }
 .agenda-item .blk { font-size: 5.4cqh; }
@@ -682,7 +682,7 @@ u.bousen {
 
 <div class="wrapper header-and-content">
 
-# 今日の話 <span class="en">Today’s topics</span>
+# お品書き <span class="en">On the menu</span>
 
 <div class="body-area">
 
