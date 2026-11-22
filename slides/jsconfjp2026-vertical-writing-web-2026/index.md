@@ -20,6 +20,12 @@ code, pre, pre * {
   3段階の対応: 解消していく=緑、仕様になっていく=橙、話題が起きている=紫
 */
 :root {
+  /* 余白の目盛り。間隔はこの5段だけを使う */
+  --sp-xs: 1cqh;
+  --sp-s: 2cqh;
+  --sp-m: 3.5cqh;
+  --sp-l: 5cqh;
+  --sp-xl: 8cqh;
   --orange: #f7b26a;
   --orange-deep: #d9822b;
   --green: #74db9c;
@@ -61,7 +67,7 @@ code, pre, pre * {
 /* 重ねブロック */
 .blk {
   display: inline-block;
-  padding: 1cqh 2.2cqh;
+  padding: var(--sp-xs) var(--sp-s);
   border-radius: 1cqh;
   font-weight: bold;
   color: var(--ink);
@@ -83,7 +89,7 @@ code, pre, pre * {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5cqh;
+  gap: var(--sp-l);
 }
 .q {
   word-break: normal;
@@ -93,23 +99,23 @@ code, pre, pre * {
   background: #fff;
   border: 0.4cqh solid #cfc3e0;
   border-radius: 1.5cqh;
-  padding: 2cqh;
+  padding: var(--sp-s);
   display: flex;
   flex-direction: column;
-  gap: 1.5cqh;
+  gap: var(--sp-s);
   block-size: fit-content;
 }
 /* 1行の文字数を縦横でそろえる */
 .q.wm-horizontal, .q.wm-vertical { inline-size: 18.5em; }
 .q-text {
-  padding: 1cqh;
+  padding: var(--sp-xs);
   background: #f5f1fa;
   border-radius: 1cqh;
 }
 .q-choices {
   display: flex;
   flex-direction: column;
-  gap: 1cqh;
+  gap: var(--sp-xs);
 }
 .q-choice {
   padding: 0.6cqh 1.4cqh;
@@ -124,7 +130,7 @@ code, pre, pre * {
 .q-acc {
   display: flex;
   align-items: center;
-  gap: 1cqh;
+  gap: var(--sp-xs);
   color: var(--purple-deep);
 }
 .q-arrow { display: inline-block; font-size: 0.9em; }
@@ -145,7 +151,7 @@ code, pre, pre * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2cqh;
+  gap: var(--sp-s);
 }
 
 /* 差し替え用の枠 */
@@ -159,7 +165,7 @@ code, pre, pre * {
   background: repeating-linear-gradient(45deg, #f6f6f6 0 2cqh, #eee 2cqh 4cqh);
   color: #888;
   font-size: 3.6cqh;
-  padding: 2cqh;
+  padding: var(--sp-s);
 }
 
 /* コード */
@@ -170,7 +176,7 @@ code, pre, pre * {
   line-height: 1.5;
   background: #2b2340;
   color: #ece6f5;
-  padding: 2cqh 3cqh;
+  padding: var(--sp-s) var(--sp-m);
   border-radius: 1.5cqh;
   white-space: pre;
   font-family: "Noto Sans Mono", ui-monospace, monospace;
@@ -189,14 +195,14 @@ code, pre, pre * {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4cqh;
+  gap: var(--sp-m);
 }
 .col {
   writing-mode: horizontal-tb;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2cqh;
+  gap: var(--sp-s);
 }
 /* margin の可視化 */
 /* 3つの図を同じ大きさの区画に置き、ラベルと枠の位置を揃える */
@@ -205,8 +211,8 @@ code, pre, pre * {
   display: grid;
   grid-template-columns: repeat(3, 40cqh);
   grid-template-rows: auto auto auto;
-  column-gap: 4cqh;
-  row-gap: 1.2cqh;
+  column-gap: var(--sp-m);
+  row-gap: var(--sp-xs);
 }
 .slide-content .m-demo {
   margin: 0;
@@ -265,7 +271,7 @@ code, pre, pre * {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3cqh;
+  gap: var(--sp-m);
 }
 /* line-clamp のスクショ2枚 */
 .lc-grid { grid-template-columns: repeat(2, 66cqh); grid-template-rows: auto auto auto auto; }
@@ -275,29 +281,29 @@ code, pre, pre * {
 .lc-stage img { block-size: 38cqh; inline-size: auto; }
 
 /* 構文を足すアイデア */
-.syntax-pairs { grid-template-columns: 20cqh max-content; row-gap: 2.5cqh; }
+.syntax-pairs { grid-template-columns: 20cqh max-content; row-gap: var(--sp-s); }
 .syntax-pairs > .code { justify-self: stretch; inline-size: auto; font-size: 3.6cqh; }
 .syntax-pairs > .blk { font-size: 3.6cqh; }
-.syntax-meta { display: flex; flex-direction: column; gap: 1.2cqh; font-size: 3.36cqh; }
+.syntax-meta { display: flex; flex-direction: column; gap: var(--sp-xs); font-size: 3.36cqh; }
 .syntax-meta .blk { font-size: 3.12cqh; }
 
 /* 縦書きは存在する */
-.exist { display: flex; flex-direction: column; align-items: center; gap: 5cqh; }
+.exist { display: flex; flex-direction: column; align-items: center; gap: var(--sp-l); }
 .exist-title { font-size: 11cqh; font-weight: 900; line-height: 1.3; }
-.exist-chips { display: flex; flex-direction: column; gap: 2cqh; font-size: 5.28cqh; }
+.exist-chips { display: flex; flex-direction: column; gap: var(--sp-s); font-size: 5.28cqh; }
 .exist-proof .q { font-size: 2.64cqh; inline-size: 18.5em; opacity: 0.9; }
 
 /* 締め（縦書きは存在する＋誰）。テキストは縦組みのまま */
 /* 右の見出しのまとまりと左の名乗りのまとまりを、上端をそろえ、同じ間隔の区切り線で釣り合わせる */
 .closing { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
-.closing-head { display: flex; flex-direction: column; align-items: flex-start; gap: 2.5cqh; padding-block-end: 6cqh; }
+.closing-head { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-s); padding-block-end: var(--sp-l); }
 .closing-title { font-size: 10.5cqh; font-weight: 900; line-height: 1.3; }
 .closing-sub { font-size: 5.28cqh; font-weight: 600; color: var(--sub); }
-.closing-me { display: flex; flex-direction: column; align-items: flex-start; gap: 5cqh; font-size: 4.32cqh; line-height: 1.3; padding-block-start: 6cqh; border-block-start: 0.3cqh solid #ddd; }
+.closing-me { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-l); font-size: 4.32cqh; line-height: 1.3; padding-block-start: var(--sp-l); border-block-start: 0.3cqh solid #ddd; }
 /* アイコンは名前と肩書きの2列の上に、中央そろえで置く */
-.closing-person { writing-mode: horizontal-tb; display: flex; flex-direction: column; align-items: center; gap: 2.5cqh; }
-.closing-person-text { writing-mode: vertical-rl; display: flex; flex-direction: column; align-items: flex-start; gap: 2cqh; }
-.closing-orgs { display: flex; flex-direction: column; align-items: flex-start; gap: 2cqh; }
+.closing-person { writing-mode: horizontal-tb; display: flex; flex-direction: column; align-items: center; gap: var(--sp-s); }
+.closing-person-text { writing-mode: vertical-rl; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-s); }
+.closing-orgs { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-s); }
 .closing-avatar { display: block; width: 14cqh; height: 14cqh; border-radius: 9999px; object-fit: cover; box-shadow: 0 0 0 0.5cqh #fff, 0 0 0 0.8cqh #ddd; }
 .closing-name { font-size: 5.52cqh; font-weight: bold; }
 .closing-name span { font-size: 0.6em; color: var(--sub); margin-inline-start: 0.5em; }
@@ -305,17 +311,17 @@ code, pre, pre * {
 .closing-tag { font-weight: bold; color: var(--green-deep); }
 
 /* 物理と論理の対称性の表 */
-.sym { display: grid; grid-template-columns: max-content max-content max-content; gap: 2cqh 4cqh; align-items: center; font-size: 4.8cqh; padding: 3cqh 4cqh; background: #f7f7f7; border-radius: 1.5cqh; }
+.sym { display: grid; grid-template-columns: max-content max-content max-content; gap: var(--sp-s) var(--sp-m); align-items: center; font-size: 4.8cqh; padding: var(--sp-m) var(--sp-l); background: #f7f7f7; border-radius: 1.5cqh; }
 .sym-h { font-weight: bold; color: var(--sub); }
 .sym-r { font-weight: bold; }
 .sym code { font-size: 4.32cqh; }
 .sym-none { color: #bbb; }
-.sym-pair { display: flex; flex-direction: column; align-items: flex-start; gap: 1cqh; }
+.sym-pair { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-xs); }
 .sym-new { border: 0.4cqh dashed var(--orange-deep); border-radius: 1cqh; padding: 0.6cqh 1.2cqh; color: var(--orange-deep); font-weight: bold; }
-.glad-chips { display: grid; grid-template-columns: max-content max-content; align-items: start; gap: 1.2cqh 1.5cqh; font-size: 3.36cqh; }
+.glad-chips { display: grid; grid-template-columns: max-content max-content; align-items: start; gap: var(--sp-xs) var(--sp-s); font-size: 3.36cqh; }
 .glad-chips .glad-col { grid-column: 1 / -1; }
-.glad-col { display: flex; flex-direction: column; align-items: flex-start; gap: 1.2cqh; }
-.glad-example { display: flex; align-items: flex-start; gap: 1.2cqh; font-size: 3cqh; color: var(--sub); line-height: 1.6; }
+.glad-col { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-xs); }
+.glad-example { display: flex; align-items: flex-start; gap: var(--sp-xs); font-size: 3cqh; color: var(--sub); line-height: 1.6; }
 .glad-example .blk { font-size: 3.12cqh; }
 
 /* 傍線。縦書きでは右側、横書きでは下側に付ける */
@@ -326,15 +332,24 @@ u.bousen {
 }
 
 /* 論理／物理 × 横書き／縦書き の2×2 */
-.mm { display: grid; grid-template-columns: max-content 40cqh 40cqh; grid-template-rows: auto 34cqh 34cqh; gap: 1.5cqh 2.5cqh; align-items: center; }
+.mm { display: grid; grid-template-columns: max-content 40cqh 40cqh; grid-template-rows: auto 34cqh 34cqh; gap: var(--sp-s) var(--sp-s); align-items: center; }
 .mm-col { text-align: center; font-size: 4.08cqh; font-weight: bold; }
-.mm-row { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6cqh; font-size: 4.08cqh; }
+.mm-row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-xs); font-size: 4.08cqh; }
 .mm-row code { font-size: 2.88cqh; color: var(--sub); }
 .mm-cell .m-choice { font-size: 2.64cqh; }
 .mm-cell { position: relative; overflow: hidden; block-size: 100%; display: grid; place-items: center; border: 0.6cqh solid; border-radius: 1cqh; }
 .mm-cell.ok { border-color: var(--green-deep); }
 .mm-cell.ng { border-color: #d33; }
 .mm-icon { position: absolute; inset-block-start: 1cqh; inset-inline-start: 1cqh; font-size: 4.08cqh; line-height: 1; }
+
+/* 今日の話：3段階を同じ形の列で並べる */
+.agenda { display: flex; flex-direction: column; gap: var(--sp-l); }
+.agenda-item { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-s); }
+.agenda-item .blk { font-size: 5.4cqh; }
+.agenda-topic { font-size: 4.6cqh; font-weight: 600; color: var(--sub); padding-inline-start: var(--sp-xs); }
+
+/* 本文の領域。見出しと締めの間を埋め、中身を中央に置く */
+.body-area { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--sp-m); }
 
 /* アイコン */
 .ic { inline-size: 1.1em; block-size: 1.1em; vertical-align: -0.2em; flex: none; }
@@ -347,7 +362,7 @@ u.bousen {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5cqh;
+  gap: var(--sp-s);
 }
 .shot img {
   block-size: 40cqh;
@@ -364,14 +379,14 @@ u.bousen {
 .shot-label {
   display: flex;
   align-items: center;
-  gap: 1.2cqh;
+  gap: var(--sp-xs);
   font-size: 4.08cqh;
   font-weight: bold;
 }
 
 /* アコーディオンの開閉マークの図。開く方向を矢印で添える */
-.open-v { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5cqh; }
-.open-h { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1cqh; }
+.open-v { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: var(--sp-s); }
+.open-h { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--sp-xs); }
 .open-dir { font-size: 5.28cqh; font-weight: bold; color: var(--orange-deep); line-height: 1; }
 .acc-grid { grid-template-columns: repeat(3, 34cqh); }
 .acc-grid .m-stage { block-size: 34cqh; }
@@ -379,7 +394,7 @@ u.bousen {
 .acc {
   display: flex;
   align-items: center;
-  gap: 1cqh;
+  gap: var(--sp-xs);
   font-size: 3.84cqh;
   font-weight: bold;
   color: var(--purple-deep);
@@ -456,23 +471,23 @@ u.bousen {
 .q-grid { grid-template-columns: repeat(2, 44cqh); }
 .m-demo.prop .m-stage { border-color: var(--purple-deep); border-style: dashed; }
 .m-demo.now .m-stage { border-color: #aaa; }
-.q-status { display: flex; align-items: center; gap: 1.2cqh; font-size: 3.12cqh; }
+.q-status { display: flex; align-items: center; gap: var(--sp-xs); font-size: 3.12cqh; }
 .q-sep { inline-size: 0.3cqh; block-size: 4cqh; background: #ccc; margin-inline: 1cqh; }
 .blk.p-line { background: transparent; border: 0.3cqh solid var(--purple); color: var(--purple-deep); }
 
 /* 部品が自分の置かれた流れを問う図 */
-.flow-grid { writing-mode: horizontal-tb; display: flex; gap: 5cqh; align-items: flex-start; }
-.slide-content .flow-demo { margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.2cqh; }
+.flow-grid { writing-mode: horizontal-tb; display: flex; gap: var(--sp-l); align-items: flex-start; }
+.slide-content .flow-demo { margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-xs); }
 .flow-page {
   block-size: auto;
-  padding: 2cqh;
+  padding: var(--sp-s);
   border: 0.4cqh solid #ccc;
   border-radius: 1cqh;
   background: #fafafa;
   font-size: 2.28cqh;
   line-height: 1.7;
 }
-.flow-page.wm-vertical { block-size: 52cqh; inline-size: 40cqh; }
+.flow-page.wm-vertical { block-size: 44cqh; inline-size: 40cqh; }
 .flow-page.wm-horizontal { inline-size: 58cqh; }
 .flow-text { color: #aaa; margin: 0; word-break: normal; line-break: strict; }
 .flow-comp { position: relative; margin-block: 1.5cqh; }
@@ -493,14 +508,14 @@ u.bousen {
 }
 
 /* 「縦？横？」から枝分かれする構想の図 */
-.tree { display: flex; align-items: center; gap: 2cqh; font-size: 3.36cqh; }
-.tree-root { display: flex; flex-direction: column; align-items: center; gap: 1cqh; }
+.tree { display: flex; align-items: center; gap: var(--sp-s); font-size: 3.36cqh; }
+.tree-root { display: flex; flex-direction: column; align-items: center; gap: var(--sp-xs); }
 .tree-lead { font-size: 3.84cqh; font-weight: bold; color: var(--sub); white-space: nowrap; }
 .tree-link { font-size: 2.6cqh; text-align: center; }
 .ask-chip { font-size: 3.6cqh; font-weight: bold; color: #fff; background: var(--orange-deep); padding: 0.4cqh 1.2cqh; border-radius: 1cqh; white-space: nowrap; }
-.tree-branches { display: flex; flex-direction: column; gap: 1cqh; border-inline-start: 0.4cqh solid var(--purple); padding-block: 0.6cqh; }
-.tree-branch { display: flex; align-items: center; gap: 1.5cqh; }
-.tree-item { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3cqh; }
+.tree-branches { display: flex; flex-direction: column; gap: var(--sp-xs); border-inline-start: 0.4cqh solid var(--purple); }
+.tree-branch { display: flex; align-items: center; gap: var(--sp-s); }
+.tree-item { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .tree-branch::before { content: ""; inline-size: 3cqh; block-size: 0.4cqh; background: var(--purple); flex: none; }
 .tree-label { font-weight: bold; color: var(--purple-deep); white-space: nowrap; }
 .tree-desc { font-size: 3.12cqh; color: var(--sub); font-weight: 600; white-space: nowrap; }
@@ -511,18 +526,18 @@ u.bousen {
 .fixlog {
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  gap: 1.2cqh 2cqh;
+  gap: var(--sp-xs) var(--sp-s);
   align-items: center;
   font-size: 3.6cqh;
 }
 .fixlog > * { white-space: nowrap; }
-.fixlog > .blk { font-size: 3.12cqh; padding: 0.6cqh 1.6cqh; text-align: center; }
+.fixlog > .blk { font-size: 3.12cqh; padding: var(--sp-xs) var(--sp-s); text-align: center; }
 .fixlog .now { color: var(--sub); font-weight: 600; }
 
 .pairs {
   display: grid;
   grid-template-columns: max-content max-content;
-  gap: 2.5cqh 3cqh;
+  gap: var(--sp-s) var(--sp-m);
   align-items: center;
 }
 .pairs > .blk {
@@ -585,7 +600,7 @@ u.bousen {
 
 <div class="wrapper center">
 
-<div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2); gap: 4cqh;">
+<div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2); gap: var(--sp-m);">
   <h1 class="upright" style="overflow: visible; font-size: 8.4cqh; margin: 0; white-space: nowrap;">縦書きＷｅｂの周辺状況</h1>
   <div class="upright" style="font-size: 6cqh; font-weight: bold; color: #555; text-align: end;">２０２６</div>
   <div style="font-size: 4.8cqh; color: #666; text-align: end;">JSConf JP 2026 / berlysia</div>
@@ -607,7 +622,7 @@ u.bousen {
 
 # 教材の選択式問題
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<div class="body-area">
 
 <div class="q-pair">
 
@@ -658,17 +673,12 @@ u.bousen {
 
 # 今日の話
 
-<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<div class="body-area">
 
-<div class="stages-ul">
-
-- <span class="blk g">解消していく</span>
-  - Safari の line-clamp
-- <span class="blk o">仕様になっていく</span>
-  - 論理プロパティのショートハンド
-- <span class="blk p">話題が起きている</span>
-  - 自分の書字方向を知る方法
-
+<div class="agenda">
+<div class="agenda-item g"><span class="blk g">解消していく</span><span class="agenda-topic">Safari の line-clamp</span></div>
+<div class="agenda-item o"><span class="blk o">仕様になっていく</span><span class="agenda-topic">論理プロパティのショートハンド</span></div>
+<div class="agenda-item p"><span class="blk p">話題が起きている</span><span class="agenda-topic">自分の書字方向を知る方法</span></div>
 </div>
 
 </div>
@@ -707,7 +717,7 @@ u.bousen {
 
 # Safari の line-clamp
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4cqh;">
+<div class="wm-horizontal body-area">
 
 <div class="m-grid lc-grid">
 
@@ -746,7 +756,7 @@ u.bousen {
 
 # 論理プロパティの<wbr />ショートハンド
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<div class="wm-horizontal body-area">
 
 <div class="mm">
 <span></span><span class="mm-col">横書き</span><span class="mm-col">縦書き</span>
@@ -775,7 +785,7 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 
 # 構文を足すアイデア
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3cqh;">
+<div class="wm-horizontal body-area">
 
 <div class="stack">
 
@@ -788,7 +798,7 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 <span class="em">@physical</span> { .photo  { margin: 32px 8px; } }</div>
 <span></span>
 <div class="syntax-meta">
-<div style="display: flex; align-items: center; gap: 1.2cqh;">
+<div style="display: flex; align-items: center; gap: var(--sp-xs);">
 <span class="blk dash" style="border-color: var(--orange-deep); color: var(--orange-deep);">まだ案</span>
 <span class="blk n">TPAC 2026 で決議</span>
 </div>
@@ -819,7 +829,7 @@ CSSファイルのバイト数を気にするような道具だと、CSS側の�
 
 # 縦書き目線でうれしいか
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4cqh;">
+<div class="wm-horizontal body-area">
 
 <div class="sym">
 <span></span><span class="sym-h">物理</span><span class="sym-h">論理</span>
@@ -860,9 +870,9 @@ getComputedStyle を用いて取得したり、もっとざっくりやるなら
 
 # 例：開閉マークを<wbr />開く方向に向けたい
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3cqh;">
+<div class="wm-horizontal body-area">
 
-<div class="stack" style="align-items: center; gap: 3cqh;">
+<div class="stack" style="align-items: center; gap: var(--sp-m);">
 
 <div class="m-grid acc-grid">
 
@@ -886,7 +896,7 @@ getComputedStyle を用いて取得したり、もっとざっくりやるなら
 
 </div>
 
-<div class="pairs" style="grid-template-columns: 11cqh max-content; row-gap: 1.5cqh;">
+<div class="pairs" style="grid-template-columns: 11cqh max-content; row-gap: var(--sp-s);">
 <span class="blk n">JS</span>
 <div class="code" style="font-size: 2.6cqh;">const vertical = <span class="em">getComputedStyle(el).writingMode</span>.startsWith("vertical");
 el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
@@ -916,9 +926,9 @@ el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
 
 # 例：寸法の計算も<wbr />入れ替える
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3cqh;">
+<div class="wm-horizontal body-area">
 
-<div class="stack" style="align-items: center; gap: 3cqh;">
+<div class="stack" style="align-items: center; gap: var(--sp-m);">
 
 <div class="m-grid clamp-grid">
 
@@ -971,9 +981,9 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 
 # 自分の書字方向を知る方法
 
-<div class="wm-horizontal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3cqh;">
+<div class="wm-horizontal body-area">
 
-<div class="stack" style="align-items: center; gap: 2.5cqh;">
+<div class="stack" style="align-items: center; gap: var(--sp-s);">
 
 <div class="flow-grid">
 
