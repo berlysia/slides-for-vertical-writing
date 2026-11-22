@@ -294,6 +294,10 @@ code, pre, pre * {
 .syntax-pairs { grid-template-columns: 20cqh max-content; row-gap: var(--sp-s); }
 .syntax-pairs > .code { justify-self: stretch; inline-size: auto; font-size: 3.6cqh; }
 .syntax-pairs > .blk { font-size: 3.6cqh; }
+.syntax-pairs > .code { outline: 0.3cqh dashed var(--orange-deep); outline-offset: 0.6cqh; }
+.syntax-tentative { justify-self: start; font-size: 3.12cqh; font-weight: bold; color: var(--orange-deep); border: 0.3cqh dashed var(--orange-deep); border-radius: 0.6cqh; padding: 0.4cqh var(--sp-s); }
+.syntax-pairs > .blk .en-i { display: block; margin-inline-start: 0; }
+.syntax-tentative .en-i { color: inherit; opacity: 0.75; }
 .syntax-meta { display: flex; flex-direction: column; gap: var(--sp-xs); font-size: 3.36cqh; }
 .syntax-meta .blk { font-size: 3.12cqh; }
 
@@ -321,7 +325,7 @@ code, pre, pre * {
 .closing-tag { font-weight: bold; color: var(--green-deep); }
 
 /* 物理と論理の対称性の表 */
-.sym { display: grid; grid-template-columns: max-content max-content max-content; gap: var(--sp-s) var(--sp-m); align-items: center; font-size: 4.8cqh; padding: var(--sp-m) var(--sp-l); background: #f7f7f7; border-radius: 1.5cqh; }
+.sym { display: grid; grid-template-columns: max-content max-content max-content; gap: var(--sp-s); align-items: center; font-size: 4.8cqh; padding: var(--sp-m); background: #f7f7f7; border-radius: 1.5cqh; }
 .sym-h { font-weight: bold; color: var(--sub); }
 .sym-r { font-weight: bold; }
 .sym code { font-size: 4.32cqh; }
@@ -801,6 +805,8 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 <div class="stack">
 
 <div class="pairs syntax-pairs">
+<span></span>
+<span class="syntax-tentative">構文はまだ案<span class="en-i">Syntax not settled</span></span>
 <span class="blk o">宣言ごと<span class="en-i">Per declaration</span></span>
 <div class="code">.choice { margin: 32px 8px <span class="em">!logical</span>; }
 .photo  { margin: 32px 8px <span class="em">!physical</span>; }</div>
@@ -809,11 +815,7 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 <span class="em">@physical</span> { .photo  { margin: 32px 8px; } }</div>
 <span></span>
 <div class="syntax-meta">
-<div style="display: flex; align-items: center; gap: var(--sp-xs);">
-<span class="blk dash" style="border-color: var(--orange-deep); color: var(--orange-deep);">まだ案</span>
-<span class="blk n">TPAC 2026 で決議</span>
-</div>
-<div>暫定的に<br /><b>CSS Logical Properties and Values Level 2</b><br />として草案化</div>
+<div>暫定的に<br /><b>CSS Logical Properties and Values Level 2</b><br />として草案化することに TPAC 2026 で決議<span class="en">Resolved at TPAC 2026 to draft css-logical-2</span></div>
 <div class="caption"><a href="https://github.com/w3c/csswg-drafts/issues/1282" target="_blank">w3c/csswg-drafts #1282</a></div>
 </div>
 </div>
@@ -909,10 +911,10 @@ getComputedStyle を用いて取得したり、もっとざっくりやるなら
 
 <div class="pairs" style="grid-template-columns: 11cqh max-content; row-gap: var(--sp-s);">
 <span class="blk n">JS</span>
-<div class="code" style="font-size: 2.6cqh;">const vertical = <span class="em">getComputedStyle(el).writingMode</span>.startsWith("vertical");
+<div class="code" style="font-size: 2.3cqh;">const vertical = <span class="em">getComputedStyle(el).writingMode</span>.startsWith("vertical");
 el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
 <span class="blk n">CSS</span>
-<div class="code" style="font-size: 2.6cqh;"><span class="em">.is-vertical</span> .accordion__marker { rotate: 90deg; }
+<div class="code" style="font-size: 2.3cqh;"><span class="em">.is-vertical</span> .accordion__marker { rotate: 90deg; }
 <span class="em">.is-vertical</span> .readmore-overlay { background: linear-gradient(<span class="em">to left</span>, …); }</div>
 </div>
 
