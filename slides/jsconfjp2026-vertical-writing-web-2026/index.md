@@ -585,7 +585,8 @@ u.bousen {
 <div class="wrapper center">
 
 <div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2); gap: 4cqh;">
-  <h1 class="upright" style="overflow: visible; font-size: 1.6em; margin: 0;">縦書きＷｅｂの<br />周辺状況<span style="display: inline-block; margin-inline-start: 0.6em; font-size: 0.75em; color: #555;">２０２６</span></h1>
+  <h1 class="upright" style="overflow: visible; font-size: 8.4cqh; margin: 0; white-space: nowrap;">縦書きＷｅｂの周辺状況</h1>
+  <div class="upright" style="font-size: 6cqh; font-weight: bold; color: #555; text-align: end;">２０２６</div>
   <div style="font-size: 4.8cqh; color: #666; text-align: end;">JSConf JP 2026 / berlysia</div>
 </div>
 
