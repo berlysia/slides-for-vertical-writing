@@ -496,6 +496,7 @@ u.bousen {
 .tree { display: flex; align-items: center; gap: 2cqh; font-size: 3.36cqh; }
 .tree-root { display: flex; flex-direction: column; align-items: center; gap: 1cqh; }
 .tree-lead { font-size: 3.84cqh; font-weight: bold; color: var(--sub); white-space: nowrap; }
+.tree-link { font-size: 2.6cqh; text-align: center; }
 .ask-chip { font-size: 3.6cqh; font-weight: bold; color: #fff; background: var(--orange-deep); padding: 0.4cqh 1.2cqh; border-radius: 1cqh; white-space: nowrap; }
 .tree-branches { display: flex; flex-direction: column; gap: 1cqh; border-inline-start: 0.4cqh solid var(--purple); padding-block: 0.6cqh; }
 .tree-branch { display: flex; align-items: center; gap: 1.5cqh; }
@@ -997,7 +998,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 </div>
 
 <div class="tree">
-<div class="tree-root"><span class="tree-lead">たとえば</span></div>
+<div class="tree-root"><span class="tree-lead">たとえば</span><a class="tree-link" href="https://github.com/w3c/csswg-drafts/issues/14527" target="_blank">csswg-drafts<br />#14527</a></div>
 <div class="tree-branches">
 <div class="tree-branch"><div class="tree-item"><span class="tree-label">例外に <code>writing-mode</code> を足す</span><code class="tree-code"><span class="em">@container style(writing-mode: vertical-rl)</span> { … }</code></div></div>
 <div class="tree-branch"><div class="tree-item"><span class="tree-label">新しいクエリの構文を定義する</span><span class="tree-desc">writing-mode() で vertical かを問う</span></div></div>
@@ -1005,8 +1006,6 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 <div class="tree-branch"><div class="tree-item"><span class="tree-label">読む値を使用値にする</span><span class="tree-desc">実際に使われている向きを問う</span></div></div>
 </div>
 </div>
-
-<div class="caption"><a href="https://github.com/w3c/csswg-drafts/issues/14527" target="_blank">w3c/csswg-drafts #14527</a></div>
 
 </div>
 
