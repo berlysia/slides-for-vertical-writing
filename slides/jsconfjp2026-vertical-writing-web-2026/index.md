@@ -59,6 +59,16 @@ code, pre, pre * {
 .takeaway .em-o { color: var(--orange-deep); }
 .takeaway .em-p { color: var(--purple-deep); }
 
+
+/* 英語の添え書き。縦組みの本体の脇に、小さく控えめに横倒しで置く */
+.en { display: block; font-size: 2.8cqh; font-weight: 600; color: #999; line-height: 1.3; letter-spacing: 0.01em; white-space: nowrap; word-break: normal; }
+.takeaway .en { margin-block-start: var(--sp-xs); }
+.slide-content h1 .en { margin-block-start: var(--sp-xs); }
+.en-i { font-size: 0.6em; font-weight: 600; color: #999; margin-inline-start: 0.5em; white-space: nowrap; letter-spacing: 0.01em; }
+.blk .en-i { color: inherit; opacity: 0.75; }
+.sym-r .en-i { display: block; margin-inline-start: 0; }
+.en .tcu, .en-i .tcu, .en-i .upright, .en .upright, .en [class*="tcu"], .en [class*="upright"] { text-combine-upright: none; text-orientation: mixed; }
+
 .caption {
   font-size: 3.84cqh;
   color: #888;
@@ -603,6 +613,7 @@ u.bousen {
 <div style="display: flex; flex-direction: column; inline-size: calc(100cqh - var(--space-wrapper) * 2); gap: var(--sp-m);">
   <h1 class="upright" style="overflow: visible; font-size: 8.4cqh; margin: 0; white-space: nowrap;">縦書きＷｅｂの周辺状況</h1>
   <div class="upright" style="font-size: 6cqh; font-weight: bold; color: #555; text-align: end;">２０２６</div>
+  <div class="en" style="font-size: 3.4cqh; text-align: end;">The State of Vertical Writing on the Web, 2026</div>
   <div style="font-size: 4.8cqh; color: #666; text-align: end;">JSConf JP 2026 / berlysia</div>
 </div>
 
@@ -620,7 +631,7 @@ u.bousen {
 
 <div class="wrapper header-and-content">
 
-# 教材の選択式問題
+# 教材の選択式問題 <span class="en">Multiple-choice questions in our materials</span>
 
 <div class="body-area">
 
@@ -637,7 +648,7 @@ u.bousen {
 </div>
 <div class="q-acc"><span class="q-arrow">▼</span> 解説を開く</div>
 </div>
-<div class="caption">横組み</div>
+<div class="caption">横組み<span class="en-i">Horizontal</span></div>
 </div>
 
 <div class="q-col">
@@ -651,14 +662,14 @@ u.bousen {
 </div>
 <div class="q-acc"><span class="q-arrow">▼</span> 解説を開く</div>
 </div>
-<div class="caption">縦組み</div>
+<div class="caption">縦組み<span class="en-i">Vertical</span></div>
 </div>
 
 </div>
 
 </div>
 
-<div class="takeaway">宣言的に書きたいが、<wbr />色々と課題</div>
+<div class="takeaway">宣言的に書きたいが、<wbr />色々と課題<span class="en">We want it declarative, but there are hurdles</span></div>
 
 </div>
 
@@ -671,19 +682,19 @@ u.bousen {
 
 <div class="wrapper header-and-content">
 
-# 今日の話
+# 今日の話 <span class="en">Today’s topics</span>
 
 <div class="body-area">
 
 <div class="agenda">
-<div class="agenda-item g"><span class="blk g">解消していく</span><span class="agenda-topic">Safari の line-clamp</span></div>
-<div class="agenda-item o"><span class="blk o">仕様になっていく</span><span class="agenda-topic">論理プロパティのショートハンド</span></div>
-<div class="agenda-item p"><span class="blk p">話題が起きている</span><span class="agenda-topic">自分の書字方向を知る方法</span></div>
+<div class="agenda-item g"><span class="blk g">解消していく</span><span class="en">Getting fixed</span><span class="agenda-topic">Safari の line-clamp</span></div>
+<div class="agenda-item o"><span class="blk o">仕様になっていく</span><span class="en">Becoming a spec</span><span class="agenda-topic">論理プロパティのショートハンド</span></div>
+<div class="agenda-item p"><span class="blk p">話題が起きている</span><span class="en">Being discussed</span><span class="agenda-topic">自分の書字方向を知る方法</span></div>
 </div>
 
 </div>
 
-<div class="takeaway">3つの段階に分けて紹介</div>
+<div class="takeaway">3つの段階に分けて紹介<span class="en">Three stages</span></div>
 
 </div>
 
@@ -715,7 +726,7 @@ u.bousen {
 
 <div class="wrapper header-and-content">
 
-# Safari の line-clamp
+# Safari の line-clamp <span class="en">line-clamp in Safari</span>
 
 <div class="wm-horizontal body-area">
 
@@ -740,7 +751,7 @@ u.bousen {
 </div>
 
 
-<div class="takeaway">実装が進み、解消しそう</div>
+<div class="takeaway">実装が進み、解消しそう<span class="en">Implementations are fixing it</span></div>
 
 </div>
 
@@ -754,19 +765,19 @@ u.bousen {
 
 <div class="wrapper header-and-content">
 
-# 論理プロパティの<wbr />ショートハンド
+# 論理プロパティの<wbr />ショートハンド <span class="en">Logical property shorthands</span>
 
 <div class="wm-horizontal body-area">
 
 <div class="mm">
-<span></span><span class="mm-col">横書き</span><span class="mm-col">縦書き</span>
-<span class="mm-row"><b>論理</b><code>margin-block: 32px;<br />margin-inline: 8px;</code></span><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-horizontal"><div class="m-choice logi">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-vertical"><div class="m-choice logi">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div>
-<span class="mm-row"><b>物理</b><code>margin: 32px 8px;</code></span><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-horizontal"><div class="m-choice phys">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div><div class="mm-cell ng"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="崩れる"><circle cx="12" cy="12" r="11" fill="#d33"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span><div class="m-outer wm-vertical"><div class="m-choice phys">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div>
+<span></span><span class="mm-col">横書き<span class="en-i">Horizontal</span></span><span class="mm-col">縦書き<span class="en-i">Vertical</span></span>
+<span class="mm-row"><b>論理<span class="en-i">Logical</span></b><code>margin-block: 32px;<br />margin-inline: 8px;</code></span><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-horizontal"><div class="m-choice logi">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-vertical"><div class="m-choice logi">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div>
+<span class="mm-row"><b>物理<span class="en-i">Physical</span></b><code>margin: 32px 8px;</code></span><div class="mm-cell ok"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="m-outer wm-horizontal"><div class="m-choice phys">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div><div class="mm-cell ng"><span class="mm-icon"><svg class="ic" viewBox="0 0 24 24" aria-label="崩れる"><circle cx="12" cy="12" r="11" fill="#d33"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span><div class="m-outer wm-vertical"><div class="m-choice phys">ア　完了の助動詞<br />「ぬ」の終止形</div></div></div>
 </div>
 
 </div>
 
-<div class="takeaway"><code>margin</code> は<wbr />物理指定しかできない</div>
+<div class="takeaway"><code>margin</code> は<wbr />物理指定しかできない<span class="en">margin is physical only</span></div>
 
 </div>
 
@@ -783,17 +794,17 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 
 <div class="wrapper header-and-content">
 
-# 構文を足すアイデア
+# 構文を足すアイデア <span class="en">Ideas for adding syntax</span>
 
 <div class="wm-horizontal body-area">
 
 <div class="stack">
 
 <div class="pairs syntax-pairs">
-<span class="blk o">宣言ごと</span>
+<span class="blk o">宣言ごと<span class="en-i">Per declaration</span></span>
 <div class="code">.choice { margin: 32px 8px <span class="em">!logical</span>; }
 .photo  { margin: 32px 8px <span class="em">!physical</span>; }</div>
-<span class="blk o">ブロックごと</span>
+<span class="blk o">ブロックごと<span class="en-i">Per block</span></span>
 <div class="code"><span class="em">@logical</span>  { .choice { margin: 32px 8px; } }
 <span class="em">@physical</span> { .photo  { margin: 32px 8px; } }</div>
 <span></span>
@@ -811,7 +822,7 @@ TPAC 2026（10/27、i18n WG との合同）の決議: "Draft css-logical-2 with 
 
 </div>
 
-<div class="takeaway"><span class="tcu-all">10</span>年近く前のアイデアが<wbr /><span class="em-o">草案へ</span></div>
+<div class="takeaway"><span class="tcu-all">10</span>年近く前のアイデアが<wbr /><span class="em-o">草案へ</span><span class="en">A decade-old idea heads to a draft</span></div>
 
 </div>
 
@@ -827,15 +838,15 @@ CSSファイルのバイト数を気にするような道具だと、CSS側の�
 
 <div class="wrapper header-and-content">
 
-# 縦書き目線でうれしいか
+# 縦書き目線でうれしいか <span class="en">Does it help vertical writing?</span>
 
 <div class="wm-horizontal body-area">
 
 <div class="sym">
-<span></span><span class="sym-h">物理</span><span class="sym-h">論理</span>
-<span class="sym-r">1辺ずつ</span><code>margin-top</code><code>margin-block-start</code>
-<span class="sym-r">1軸ずつ</span><span class="sym-none">なし</span><code>margin-block</code>
-<span class="sym-r">4辺まとめて</span><span class="sym-pair"><code>margin</code><span class="sym-new"><code>margin: … !physical</code></span></span><span class="sym-pair"><code>&nbsp;</code><span class="sym-new"><code>margin: … !logical</code></span></span>
+<span></span><span class="sym-h">物理<span class="en-i">Physical</span></span><span class="sym-h">論理<span class="en-i">Logical</span></span>
+<span class="sym-r">1辺ずつ<span class="en-i">One side</span></span><code>margin-top</code><code>margin-block-start</code>
+<span class="sym-r">1軸ずつ<span class="en-i">One axis</span></span><span class="sym-none">なし</span><code>margin-block</code>
+<span class="sym-r">4辺まとめて<span class="en-i">All four</span></span><span class="sym-pair"><code>margin</code><span class="sym-new"><code>margin: … !physical</code></span></span><span class="sym-pair"><code>&nbsp;</code><span class="sym-new"><code>margin: … !logical</code></span></span>
 </div>
 
 <div class="glad-chips">
@@ -852,7 +863,7 @@ CSSファイルのバイト数を気にするような道具だと、CSS側の�
 
 </div>
 
-<div class="takeaway">地味だけど、<wbr />うれしい</div>
+<div class="takeaway">地味だけど、<wbr />うれしい<span class="en">Modest, but welcome</span></div>
 
 </div>
 
@@ -868,7 +879,7 @@ getComputedStyle を用いて取得したり、もっとざっくりやるなら
 
 <div class="wrapper header-and-content">
 
-# 例：開閉マークを<wbr />開く方向に向けたい
+# 例：開閉マークを<wbr />開く方向に向けたい <span class="en">e.g. Point the marker where it opens</span>
 
 <div class="wm-horizontal body-area">
 
@@ -877,19 +888,19 @@ getComputedStyle を用いて取得したり、もっとざっくりやるなら
 <div class="m-grid acc-grid">
 
 <figure class="m-demo ok">
-<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>縦書き</div>
+<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>縦書き<span class="en-i">Vertical</span></div>
 <div class="m-code"><code>.is-vertical</code></div>
 <div class="m-stage clamp-stage open-v"><span class="open-dir" aria-label="開く方向">←</span><div class="readmore wm-vertical"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
 </figure>
 
 <figure class="m-demo ng">
-<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="崩れる"><circle cx="12" cy="12" r="11" fill="#d33"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>縦書き</div>
+<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="崩れる"><circle cx="12" cy="12" r="11" fill="#d33"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>縦書き<span class="en-i">Vertical</span></div>
 <div class="m-code"><code>&nbsp;</code></div>
 <div class="m-stage clamp-stage open-v"><span class="open-dir" aria-label="開く方向">←</span><div class="readmore wm-vertical" data-direction="off"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
 </figure>
 
 <figure class="m-demo ok">
-<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>横書き</div>
+<div class="shot-label"><svg class="ic" viewBox="0 0 24 24" aria-label="意図どおり"><circle cx="12" cy="12" r="11" fill="#23935a"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>横書き<span class="en-i">Horizontal</span></div>
 <div class="m-code"><code>&nbsp;</code></div>
 <div class="m-stage clamp-stage open-h"><div class="readmore wm-horizontal"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div><span class="open-dir" aria-label="開く方向">↓</span></div>
 </figure>
@@ -909,7 +920,7 @@ el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
 
 </div>
 
-<div class="takeaway">縦書きかどうかを<wbr />知りたい</div>
+<div class="takeaway">縦書きかどうかを<wbr />知りたい<span class="en">We want to know if it’s vertical</span></div>
 
 </div>
 
@@ -924,7 +935,7 @@ el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
 
 <div class="wrapper header-and-content">
 
-# 例：寸法の計算も<wbr />入れ替える
+# 例：寸法の計算も<wbr />入れ替える <span class="en">e.g. Swap the size calculations too</span>
 
 <div class="wm-horizontal body-area">
 
@@ -933,13 +944,13 @@ el.classList.toggle(<span class="em">"is-vertical"</span>, vertical);</div>
 <div class="m-grid clamp-grid">
 
 <figure class="m-demo neutral">
-<div class="shot-label">縦書き</div>
+<div class="shot-label">縦書き<span class="en-i">Vertical</span></div>
 <div class="m-code"><code>scrollWidth &gt; clientWidth</code></div>
 <div class="m-stage clamp-stage"><div class="readmore wm-vertical"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
 </figure>
 
 <figure class="m-demo neutral">
-<div class="shot-label">横書き</div>
+<div class="shot-label">横書き<span class="en-i">Horizontal</span></div>
 <div class="m-code"><code>scrollHeight &gt; clientHeight</code></div>
 <div class="m-stage clamp-stage"><div class="readmore wm-horizontal"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
 </figure>
@@ -957,7 +968,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 
 </div>
 
-<div class="takeaway">DOM API は<wbr />物理方向で返ってくる</div>
+<div class="takeaway">DOM API は<wbr />物理方向で返ってくる<span class="en">DOM APIs answer in physical directions</span></div>
 
 </div>
 
@@ -979,7 +990,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 
 <div class="wrapper header-and-content">
 
-# 自分の書字方向を知る方法
+# 自分の書字方向を知る方法 <span class="en">Knowing your own writing mode</span>
 
 <div class="wm-horizontal body-area">
 
@@ -988,7 +999,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 <div class="flow-grid">
 
 <figure class="flow-demo">
-<div class="shot-label"><span>縦書きの中</span></div>
+<div class="shot-label"><span>縦書きの中<span class="en-i">In vertical text</span></span></div>
 <div class="flow-page wm-vertical">
 <p class="flow-text">一　次の文章を読んで、後の問いに答えなさい。</p>
 <div class="flow-comp"><span class="ask">縦？横？</span><div class="readmore"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。秋田、なよ竹のかぐや姫とつけつ。このほど三日うちあげ遊ぶ。よろづの遊びをぞしける。男はうけきらはず呼び集へて、いとかしこく遊ぶ。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
@@ -997,7 +1008,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 </figure>
 
 <figure class="flow-demo">
-<div class="shot-label"><span>横書きの中</span></div>
+<div class="shot-label"><span>横書きの中<span class="en-i">In horizontal text</span></span></div>
 <div class="flow-page wm-horizontal">
 <p class="flow-text">一　次の文章を読んで、後の問いに答えなさい。</p>
 <div class="flow-comp"><span class="ask">縦？横？</span><div class="readmore"><div class="readmore-body">翁、竹を取ること久しくなり<u class="bousen">ぬ</u>。勢猛の者になりにけり。この子いと大きになりぬれば、名をば三室戸斎部秋田を呼びてつけさす。秋田、なよ竹のかぐや姫とつけつ。このほど三日うちあげ遊ぶ。よろづの遊びをぞしける。男はうけきらはず呼び集へて、いとかしこく遊ぶ。</div><div class="readmore-overlay"><button type="button" class="readmore-button"><span class="accordion__marker" aria-hidden="true"></span>続きを読む</button></div></div></div>
@@ -1008,7 +1019,7 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 </div>
 
 <div class="tree">
-<div class="tree-root"><span class="tree-lead">たとえば</span><a class="tree-link" href="https://github.com/w3c/csswg-drafts/issues/14527" target="_blank">csswg-drafts<br />#14527</a></div>
+<div class="tree-root"><span class="tree-lead">たとえば<span class="en">For example</span></span><a class="tree-link" href="https://github.com/w3c/csswg-drafts/issues/14527" target="_blank">csswg-drafts<br />#14527</a></div>
 <div class="tree-branches">
 <div class="tree-branch"><div class="tree-item"><span class="tree-label">例外に <code>writing-mode</code> を足す</span><code class="tree-code"><span class="em">@container style(writing-mode: vertical-rl)</span> { … }</code></div></div>
 <div class="tree-branch"><div class="tree-item"><span class="tree-label">新しいクエリの構文を定義する</span><span class="tree-desc">writing-mode() で vertical かを問う</span></div></div>
@@ -1040,7 +1051,9 @@ const isOverflowing = scrollBlockSize > clientBlockSize;
 
 <div class="closing-head">
 <div class="closing-title">Ｗｅｂの縦書きは<br />少しずつ前進中</div>
+<div class="en" style="font-size: 3.4cqh;">Moving forward, step by step</div>
 <div class="closing-sub">触ってみよう、遊んでみよう</div>
+<div class="en">Try it, play with it</div>
 </div>
 
 <div class="closing-me">
